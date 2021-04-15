@@ -1,0 +1,138 @@
+{% extends "base_admin.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div class="main-content-inner">
+    <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="btn_tab1" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">职场微课</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab2" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">直播课堂</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab3" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">预约线下</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content mt-3" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="btn_tab1">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/newcomers_characterized.png' %}">
+                        <a class="main_item_title" href="#">新人素养</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/tools.png' %}">
+                        <a class="main_item_title" href="#">工具类</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/management_class.png' %}">
+                        <a class="main_item_title" href="#">管理类</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/academic_affairs.png' %}">
+                        <a class="main_item_title" href="#">教务类</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/pedagogic_research_group.png' %}">
+                        <a class="main_item_title" href="#">教研类</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/market_class.png' %}">
+                        <a class="main_item_title" href="#">市场类</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/sales_category.png' %}">
+                        <a class="main_item_title" href="#">销售类</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/job_specification.png' %}">
+                        <a class="main_item_title" href="#">岗位规范</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="btn_tab2">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/newcomers_characterized.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/tools.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/management_class.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/academic_affairs.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/pedagogic_research_group.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/market_class.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/sales_category.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/job_specification.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="btn_tab3">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/document_center.png' %}">
+                        <a class="main_item_title" href="#">文档中心</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/announcement_management.png' %}">
+                        <a class="main_item_title" href="#">公告管理</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/news_management.png' %}">
+                        <a class="main_item_title" href="#">新闻管理</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/instant_messaging.png' %}">
+                        <a class="main_item_title" href="#">即时通讯</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/external_mail.png' %}">
+                        <a class="main_item_title" href="#">外部邮件</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/internal_mail.png' %}">
+                        <a class="main_item_title" href="#">内部邮件</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/cooperative_district.png' %}">
+                        <a class="main_item_title" href="#">协作区</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/address_book.png' %}">
+                        <a class="main_item_title" href="#">通讯录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

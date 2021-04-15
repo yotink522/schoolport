@@ -42,7 +42,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres://localhost/schoolport")
+    "default": env.db("DATABASE_URL", default="postgres://postgres:dkckdlfjs@localhost:5432/schoolport")
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
@@ -71,7 +71,16 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 LOCAL_APPS = [
     "schoolport.users.apps.UsersConfig",
@@ -260,7 +269,7 @@ ACCOUNT_AUTHENTICATION_METHOD = "username"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "none" #mandatory, optional, none
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ADAPTER = "schoolport.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
@@ -269,3 +278,9 @@ SOCIALACCOUNT_ADAPTER = "schoolport.users.adapters.SocialAccountAdapter"
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+ACCOUNT_FORMS = {
+    'signup': 'schoolport.users.forms.MyCustomSignupForm',
+    'login': 'schoolport.users.forms.MyCustomLoginForm',
+} 
+
+ACCOUNT_LOGOUT_ON_GET = True #Signout를 누르면 즉시 로그아웃되게 하는 환경변수

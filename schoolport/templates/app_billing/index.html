@@ -1,0 +1,152 @@
+{% extends "base_admin.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div class="main-content-inner">
+    <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="btn_tab1" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">发布收费</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab2" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">收费管理</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab3" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">其他收费</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab4" data-toggle="pill" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">结算中心</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab5" data-toggle="pill" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">支付中心</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content mt-3" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="btn_tab1">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/payment_statistics.png' %}">
+                        <a class="main_item_title" href="#">交费统计</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/receipt_list.png' %}">
+                        <a class="main_item_title" href="#">收据清单</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/school_wallet.png' %}">
+                        <a class="main_item_title" href="#">学校钱包</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/school_receipt_code.png' %}">
+                        <a class="main_item_title" href="#">校收款码</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/registration_renewal_fee.png' %}">
+                        <a class="main_item_title" href="#">报名续费</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/refunding_regisitration.png' %}">
+                        <a class="main_item_title" href="#">退费登记</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/courses_fees.png' %}">
+                        <a class="main_item_title" href="#">课程/收费</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/charge_on_notice.png' %}">
+                        <a class="main_item_title" href="#">按通知收费</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="btn_tab2">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/fee_audit.png' %}">
+                        <a class="main_item_title" href="#">收费审核</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/charge_arrangement.png' %}">
+                        <a class="main_item_title" href="#">收费设置</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="btn_tab3">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/campus_consignment.png' %}">
+                        <a class="main_item_title" href="#">校园寄售</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/other_charges.png' %}">
+                        <a class="main_item_title" href="#">其他收费</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="btn_tab4">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/income_and_expenditure.png' %}">
+                        <a class="main_item_title" href="#">收支流水（总）</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/income_and_expenditure.png' %}">
+                        <a class="main_item_title" href="#">收支统计（总）</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/wechat_pay.png' %}">
+                        <a class="main_item_title" href="#">微信支付</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/ali_pay.png' %}">
+                        <a class="main_item_title" href="#">支付宝支付</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/cash_pay.png' %}">
+                        <a class="main_item_title" href="#">现金支付</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/bank_transfer.png' %}">
+                        <a class="main_item_title" href="#">银行转账</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/pos_card.png' %}">
+                        <a class="main_item_title" href="#">POS刷卡</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/other_pay.png' %}">
+                        <a class="main_item_title" href="#">其他方式</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="btn_tab5">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/wechat_pay.png' %}">
+                        <a class="main_item_title" href="#">微信支付</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/ali_pay.png' %}">
+                        <a class="main_item_title" href="#">支付宝支付</a>
+                    </div>
+                    <div class="main_item col-md-4">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/pos_card.png' %}">
+                        <a class="main_item_title" href="#">信用卡分期</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -5,17 +5,33 @@ from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
+from schoolport import views
+from schoolport.users import views as user_views
+from schoolport.app_dashboard import views as dashboard_views
+
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    ),
+    #path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", views.HomeView.as_view(), name="home"),
+    path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
+    
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("schoolport.users.urls", namespace="users")),
+
+    #path("accounts/signup/", view=user_views.account_signup_view),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
+
+    # Dashboard URLS
+    path("", include("schoolport.app_dashboard.urls")),
+    path("", include("schoolport.app_billing.urls")),
+    path("", include("schoolport.app_attendance.urls")),
+    path("", include("schoolport.app_management.urls")),
+    path("", include("schoolport.app_studying.urls")),
+    path("", include("schoolport.app_interaction.urls")),
+    #path("dashboard/", dashboard_views.DashboardView.as_view(), name="dashboard-view"),
+
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

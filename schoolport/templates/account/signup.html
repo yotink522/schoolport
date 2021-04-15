@@ -1,23 +1,86 @@
-{% extends "account/base.html" %}
-
+{% extends "base.html" %}
 {% load i18n %}
 {% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
-
-{% block inner %}
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="btn btn-primary" type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+{% block content %}
+<div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area">
+        <div class="container">
+            <div class="login-box ptb--100">
+              <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                  <div class="login-form-head">
+                    <h4>Sign up</h4>
+                    <p>Hello there, Sign up and Join with Us</p>
+                  </div>
+                
+                <div class="login-form-body">
+                {% comment %} {{ form|crispy }} {% endcomment %}
+                </div>
+                  <div class="login-form-body">
+                      <div class="form-gp">
+                          <label for="id_fullname">{{form.name.label}}</label>
+                          {{form.name}}
+                          <i class="ti-user"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                      <div class="form-gp">
+                          <label for="id_fullname">{{form.username.label}}</label>
+                          {{form.username}}
+                          <i class="ti-user"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                      <div class="form-gp">
+                          <label for="id_email">{{form.email.label}}</label>
+                          {{form.email}}
+                          <i class="ti-email"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                      <div class="form-gp">
+                          <label for="id_phone_number">{{form.phone_number.label}}</label>
+                          {{form.phone_number}}
+                          <i class="ti-mobile"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                      <div class="form-gp">
+                          <label for="id_password1">Password</label>
+                          <input type="password" id="id_password1" name="password1">
+                          <i class="ti-lock"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                      <div class="form-gp">
+                          <label for="id_password2">Confirm Password</label>
+                          <input type="password" id="id_password2" name="password2">
+                          <i class="ti-lock"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                      <div class="submit-btn-area">
+                          <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                          <!--
+                          <div class="login-other row mt-4">
+                              <div class="col-6">
+                                  <a class="fb-login" href="#">Sign up with <i class="fa fa-facebook"></i></a>
+                              </div>
+                              <div class="col-6">
+                                  <a class="google-login" href="#">Sign up with <i class="fa fa-google"></i></a>
+                              </div>
+                          </div>
+                          -->
+                      </div>
+                      <div class="form-footer text-center mt-5">
+                          <p class="text-muted">Don't have an account? <a href="{% url 'account_login' %}">Sign in</a></p>
+                      </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
+
 

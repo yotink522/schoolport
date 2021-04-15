@@ -4,8 +4,30 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, RedirectView, UpdateView
+from django.shortcuts import render
+from django.http import HttpResponseRedirect, Http404
+
+from allauth.account.views import SignupView
 
 User = get_user_model()
+
+# class AccountSignupView(SignupView):
+#     template_name = "account/signup.html"
+
+#     # You can also override some other methods of SignupView
+#     # Like below:
+#     # def form_valid(self, form):
+#     #     ...
+#     #
+#     # def get_context_data(self, **kwargs):
+#     #     ...
+#     def get(self, request):
+#         return render(request, self.template_name)
+
+#     def post(self, request, *args, **kwargs):
+#         return HttpResponseRedirect(reverse('dashboard:dashboard-view'))
+
+# account_signup_view = AccountSignupView.as_view()
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -39,7 +61,11 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
     permanent = False
 
     def get_redirect_url(self):
-        return reverse("users:detail", kwargs={"username": self.request.user.username})
+        #return reverse("users:detail", kwargs={"username": self.request.user.username})
+        #return reverse("dashboard:dashboard-view", kwargs={"userinfo": self.request.user})
+        return reverse("app_dashboard:dashboard-view")
 
 
 user_redirect_view = UserRedirectView.as_view()
+
+

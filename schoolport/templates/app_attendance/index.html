@@ -1,0 +1,63 @@
+{% extends "base_admin.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div class="main-content-inner">
+    <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="btn_tab1" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">学生考勤</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab2" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">教师考勤</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content mt-3" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="btn_tab1">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/school_data.png' %}">
+                        <a class="main_item_title" href="#">全校数据</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/class_attendance_rate.png' %}">
+                        <a class="main_item_title" href="#">班级出勤率</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/class_completion_rate.png' %}">
+                        <a class="main_item_title" href="#">班级满班率</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/class_attendance_rate2.png' %}">
+                        <a class="main_item_title" href="#">班级在校率</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/personal_attendance_statistic.png' %}">
+                        <a class="main_item_title" href="#">个人出勤统计</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/roll_call_record.png' %}">
+                        <a class="main_item_title" href="#">点名记录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="btn_tab2">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/monthly_attendance.png' %}">
+                        <a class="main_item_title" href="#">月度考勤</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/annual_attendance.png' %}">
+                        <a class="main_item_title" href="#">年度考勤</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

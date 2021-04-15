@@ -1,0 +1,114 @@
+{% extends "base_admin.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div class="main-content-inner">
+    <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="btn_tab1" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">班级群聊</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab2" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">班级私信</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab3" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">沟通设置</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content mt-3" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="btn_tab1">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级A</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级B</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级C</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级D</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级E</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级F</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级G</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom.png' %}">
+                        <a class="main_item_title" href="#">班级H</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="btn_tab2">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生A</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生B</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生C</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生D</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生E</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生F</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生G</a>
+                    </div>
+                    <div class="main_item col-md-3">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/chatroom2.png' %}">
+                        <a class="main_item_title" href="#">学生H</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="btn_tab3">
+            <div class="row">
+                <div class="row col-md-12">
+                    <div class="main_item col-md-2">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/grant_permission.png' %}">
+                        <a class="main_item_title" href="#">权限设置</a>
+                    </div>
+                    <div class="main_item col-md-2">
+                        <img class="main_item_image" src="{% static 'assets/img/mainicon/grant_permission2.png' %}">
+                        <a class="main_item_title" href="#">XXXXX</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

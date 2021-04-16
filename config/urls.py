@@ -31,6 +31,8 @@ urlpatterns = [
     path("", include("schoolport.app_interaction.urls")),
     #path("dashboard/", dashboard_views.DashboardView.as_view(), name="dashboard-view"),
 
+    # REST API URLS
+    path("api/user/", include("schoolport.users.api.urls")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

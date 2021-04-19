@@ -32,7 +32,7 @@ class TB_Course(models.Model):
     #course_no = models.BigAutoField(help_text="School No", primary_key=True)    # Primary Key
     course_name = models.CharField(_("Name of Course"), max_length=255)        # 강좌이름
     
-    school_no = models.ForeignKey(TB_School, related_name="p_school_no", on_delete=models.DO_NOTHING) # 학교테이블의 Primary Key
+    school_no = models.ForeignKey(TB_School, related_name="fcourse_school_no", on_delete=models.DO_NOTHING) # 학교테이블의 Primary Key
 
     def __str__(self):
         pass
@@ -46,7 +46,7 @@ class TB_Class(models.Model):
     student_nums = models.IntegerField()                                        # 재적인원
     #teacher_no =                                                                  # 담임교원
 
-    school_no = models.ForeignKey(TB_School, related_name="a_school_no", on_delete=models.DO_NOTHING)  # 학교테이블의 Primary Key
+    school_no = models.ForeignKey(TB_School, related_name="fclass_school_no", on_delete=models.DO_NOTHING)  # 학교테이블의 Primary Key
 
     def __str__(self):
         pass
@@ -60,7 +60,7 @@ class TB_Student(models.Model):
     age = models.IntegerField()                                                                         # 나이
     address = models.CharField(_("Home Address"), max_length=255)                                       # 집주소
     
-    class_no = models.ForeignKey(TB_Class, related_name="class_no", on_delete=models.DO_NOTHING)    # 학급
+    class_no = models.ForeignKey(TB_Class, related_name="fstudent_class_no", on_delete=models.DO_NOTHING)    # 학급
 
     def __str__(self):
         pass

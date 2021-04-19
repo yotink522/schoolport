@@ -2,7 +2,7 @@ from re import U, search
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 
 from schoolport.users.models import User
@@ -10,6 +10,8 @@ from schoolport.users.api.serializers import RegistrationSerializer, UserInfoSer
 
 
 @api_view(['POST', ])
+@authentication_classes([])
+@permission_classes([])
 def registration_view(request):
     if request.method == 'POST':
         serializer = RegistrationSerializer(data=request.data)
@@ -29,14 +31,13 @@ def registration_view(request):
 @api_view(['GET', ])
 @permission_classes((IsAuthenticated,))
 def userinfo_view(request):
-    username = request.data['userid']
+    #print(request.user)
+    #username = request.data['userid']
     try:
-        user = User.objects.get(username=username)
+        user = User.objects.get(username=request.user)
     except User.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
     if request.method == "GET":
         serializer = UserInfoSerializer(user)
         return Response(serializer.data)
-        
-

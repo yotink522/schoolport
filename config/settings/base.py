@@ -82,12 +82,19 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES':[
         'rest_framework.permissions.IsAuthenticated',
-    ]
+        #'rest_framework.permissions.IsAdminUser',
+    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.pagination.PageNumberPagination',
+    #     'PAGE_SIZE': 10,
+    # ],
 }
 
 LOCAL_APPS = [
     "schoolport.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+
+    "schoolport.app_core",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

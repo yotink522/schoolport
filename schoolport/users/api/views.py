@@ -18,6 +18,7 @@ def registration_view(request):
         data = {}
         if serializer.is_valid():
             user = serializer.save()
+            data['result'] = True
             data['response'] = "successfully registerd a new user."
             data['email'] = user.email
             data['username'] = user.username
@@ -25,6 +26,8 @@ def registration_view(request):
             data['token'] = token
         else:
             data = serializer.errors
+            data['result'] = False
+        
         return Response(data)
         
 

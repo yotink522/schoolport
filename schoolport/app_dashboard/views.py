@@ -2,15 +2,34 @@ from django.shortcuts import render
 from django.urls.base import reverse_lazy
 from django.views import View
 from django.views.generic.base import TemplateResponseMixin
+from django.template.loader import render_to_string
+from django.http import JsonResponse
 
-# Create your views here.
-class DashboardView(View):
-    template_name = "app_dashboard/index.html"
+
+class DashboardMainView(View):
+    template_name = "base_admin.html"
+    data = dict()
+
     def get(self, request):
         context = {
             'sidebar':'dashboard',
             'navbar':'none',
         }
-        return render(request, self.template_name, context)
-        #return render(request, self.template_name, {'sidebar_select':'dashboard'})
+
+        return render(request, "base_admin.html", context)
+
+class DashboardView(View):
+    template_name = "app_dashboard/index.html"
+    data = dict()
+
+    def get(self, request):
+        context = {
+            'sidebar':'dashboard',
+            'navbar':'none',
+        }
+
+        #return render(request, "base_admin.html", context)
+        self.data['html_index'] = render_to_string(self.template_name, {})
+        return JsonResponse(self.data)
+        
 

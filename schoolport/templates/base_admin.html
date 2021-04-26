@@ -56,10 +56,10 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li {%if sidebar == 'dashboard'%} class="active" {%endif%}>
-                                <a href="{% url 'app_dashboard:dashboard-view' %}" aria-expanded="true"><img src="{% static 'assets/img/navicon/home.png' %}"></i><span>首页</span></a>
+                            <li>
+                                <a href="{% url 'app_dashboard:dashboard-view' %}" data-url="{% url 'app_dashboard:dashboard-view' %}" id='id_a_dashboard_view_index' aria-expanded="true"><img src="{% static 'assets/img/navicon/home.png' %}"></i><span>首页</span></a>
                             </li>
-                            <li {%if sidebar == 'billingcenter'%} class="active"{%endif%}>
+                            <li>
                                 <a href="{% url 'app_billing:billingcenter-index' %}" aria-expanded="true"><img src="{% static 'assets/img/navicon/charge.png' %}"><span>收费中心</span></a>
                                 <!--
                                 <ul class="collapse">
@@ -71,7 +71,7 @@
                                 </ul>
                                 -->
                             </li>
-                            <li {%if sidebar == 'app_attendance'%} class="active"{%endif%}>
+                            <li>
                                 <a href="{% url 'app_attendance:attendance-index' %}" aria-expanded="true"><img src="{% static 'assets/img/navicon/check.png' %}"><span>考勤中心</span></a>
                                 <!--
                                 <ul class="collapse">
@@ -81,7 +81,7 @@
                                 </ul>
                                 -->
                             </li>
-                            <li {%if sidebar == 'app_management'%} class="active"{%endif%}>
+                            <li>
                                 <a href="{% url 'app_management:management-index' %}" aria-expanded="true"><img src="{% static 'assets/img/navicon/setting.png' %}"><span>校务中心</span></a>
                                 <!--
                                 <ul class="collapse">
@@ -105,7 +105,7 @@
                                 </ul>
                                 -->
                             </li>
-                            <li {%if sidebar == 'app_studying'%} class="active"{%endif%}>
+                            <li>
                                 <a href="{% url 'app_studying:studying-index' %}" aria-expanded="true"><img src="{% static 'assets/img/navicon/study.png' %}"><span>学习中心</span></a>
                                 <!--
                                 <ul class="collapse">
@@ -114,7 +114,7 @@
                                 </ul>
                                 -->
                             </li>
-                            <li {%if sidebar == 'app_interaction'%} class="active"{%endif%}>
+                            <li>
                                 <a href="{% url 'app_interaction:interaction-index' %}" aria-expanded="true"><img src="{% static 'assets/img/navicon/commercial.png' %}"><span>家校互动</span></a>
                                 <!--
                                 <ul class="collapse">
@@ -314,8 +314,14 @@
                 </div>
             </div>
             <!-- header area end -->
+            <div id="div_main_contents">
+            
+            <!--
             {% block content %}
             {% endblock %}
+            -->
+
+            </div>
         </div>
         <!-- main content area end -->
         <!-- footer area start-->
@@ -536,6 +542,7 @@
     <!-- others plugins -->
     <script src="{% static 'assets/vendor/js/plugins.js' %}"></script>
     <script src="{% static 'assets/js/scripts.js' %}"></script>
+    <script src="{% static 'assets/js/navigate.js' %}"></script>
     <script src="{% static 'assets/js/front_main.js' %}"></script>
 </body>
 

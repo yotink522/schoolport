@@ -13,11 +13,18 @@ class BillingCenter_Index_View(View):
     def get(self, request):
         context = {
             'sidebar':'billingcenter',
-            'navbar':'releasefee',
+            'navbar':'',
         }
 
-        self.data['html_index'] = render_to_string(self.template_name, {})
-        return JsonResponse(self.data)
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            print(context)
+            return render(request, "base_admin.html", context)
+        
+
+
 
 class BillingCenter_ChargeManagement_View(View):
     template_name = "app_billing/chargemgt.html"

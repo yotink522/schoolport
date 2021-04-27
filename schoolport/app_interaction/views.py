@@ -13,9 +13,11 @@ class App_InteractionIndexView(View):
     def get(self, request):
         context = {
             'sidebar':'app_interaction',
-            'navbar':'',
+            'navbar':'none',
         }
         
-        self.data['html_index'] = render_to_string(self.template_name, {})
-        return JsonResponse(self.data)
-
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)

@@ -1,0 +1,149 @@
+{% load i18n %}
+{% load static %}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <h5>Basic Information</h5>
+            <div class="justify-content-center">
+                <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+                    <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label for="id_course_title" class="col-form-label col-1">Course Title:</label>
+                        <input class="form-control form-control-sm col-2" type="text" id="id_course_title" placeholder="Please enter the course name">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label class="col-form-label col-1">Course Type:</label>
+                        <label class="col-form-label col-1">One to many</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label class="col-form-label col-1">Universal range:</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" checked id="customRadio4" name="customRadio2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio4">General part of the course</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio5">General all courses</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <input class="btn btn-info" type="submit" value="Choose a course">
+                        <label class="col-form-label col-2">Selected: 0 courses</label>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Charging Method</h5>
+            <div class="justify-content-center" style="border: solid 1px grey;">
+                <div class="px-0 pt-4 pb-0 mt-3 mb-3 ml-3 mr-3">
+                    <div class="form-group row">
+                        <div class="col-1"></div>
+                        <div class="custom-control custom-checkbox col-2">
+                            <input type="checkbox" checked="" class="custom-control-input" id="id_article_is_availability" wtx-context="624CD9AA-F5BC-45AE-82A9-580EA59C48D5">
+                            <label class="custom-control-label" for="id_article_is_availability">Charged by class hour</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label class="col-form-label col-1">Unit Price</label>
+                        <input class="form-control form-control-sm col-2" type="text" id="id_course_title" placeholder="">
+                        <label class="col-form-label col-1">Yuan/hour</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label class="col-form-label col-1">Pricing Standard:</label>
+                        <div class="card col-6">
+                            <div class="card-body">
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Total Hours</th>
+                                                    <th scope="col">Total Price</th>
+                                                    <th scope="col">Unit Price</th>
+                                                    <th scope="col">Operating</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan=5>Add</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-1"></div>
+                        <div class="custom-control custom-checkbox col-2">
+                            <input type="checkbox" checked="" class="custom-control-input" id="id_article_is_availability" wtx-context="624CD9AA-F5BC-45AE-82A9-580EA59C48D5">
+                            <label class="custom-control-label" for="id_article_is_availability">Billed Monthly</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label class="col-form-label col-1">Unit Price</label>
+                        <input class="form-control form-control-sm col-2" type="text" id="id_course_title" placeholder="">
+                        <label class="col-form-label col-1">Yuan/month</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label class="col-form-label col-1">Pricing Standard:</label>
+                        <div class="card col-6">
+                            <div class="card-body">
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Total Hours</th>
+                                                    <th scope="col">Total Price</th>
+                                                    <th scope="col">Unit Price</th>
+                                                    <th scope="col">Operating</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan=5>Add</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <h5 class="mt-3">Other Information</h5>
+            <div class="justify-content-center">
+                <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+                    <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label class="col-form-label col-2">Remarks:</label>
+                        <input class="form-control form-control-sm col-4" type="text" id="id_course_title" placeholder="">
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-3"></div>
+                        <button type="submit" class="btn btn-success mt-4 pr-4 pl-4 mr-3 col-1">Save</button>
+                        <button type="submit" class="btn btn-secondary mt-4 pr-4 pl-4 col-1">Cancel</button>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

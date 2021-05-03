@@ -1,0 +1,410 @@
+{% load i18n %}
+{% load static %}
+
+<div class="col-lg-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Registration Renewal Fee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Package payment code</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-3" id="myTabContent">
+                <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="container">
+                        <div class="justify-content-center">
+                            <div class="">
+                                <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+                                    <form id="form">
+                                        <ul id="progressbar">
+                                            <li class="active" id="step1">
+                                                <strong>Student Information</strong>
+                                            </li>
+                                            <li id="step2"><strong>Purchase Item</strong></li>
+                                            <li id="step3"><strong>Fee Settlement</strong></li>
+                                        </ul>
+                                        <div class="progress">
+                                            <div class="progress-bar"></div>
+                                        </div> <br>
+
+                                        <!--  학생정보입력부문 -->
+                                        <fieldset>
+                                            <h2>Student Information</h2>
+                                            <div class="form-group row">
+                                                <label for="id_name" class="col-form-label col-2">Name</label>
+                                                <input class="form-control form-control-sm input-rounded col-6" type="text" id="id_name" placeholder="">
+                                                <button type="submit" class="btn btn-primary ml-4 pl-4 pr-4">Select Student</button>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="id_gender" class="col-form-label col-2">Phone No</label>
+                                                <select class="form-control form-control-sm col-2" id="id_parents">
+                                                    <option>Mommy</option>
+                                                    <option>Daddy</option>
+                                                    <option>GrandFather</option>
+                                                </select>
+                                                <input class="form-control form-control-sm col-3" type="text" id="id_phoneno" placeholder="">
+
+                                                <label for="id_gender" class="col-form-label col-2">Gender</label>
+                                                <select class="form-control form-control-sm col-2" id="id_gender">
+                                                    <option>Boy</option>
+                                                    <option>Girl</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="id_birthday" class="col-form-label col-2">Birthday</label>
+                                                <input class="form-control form-control-sm col-5" type="date" value="2021-05-01" id="id_birthday">
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="id_school" class="col-form-label col-2">School</label>
+                                                <input class="form-control form-control-sm input-rounded col-6" type="text" id="id_school" placeholder="">
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="id_grade" class="col-form-label col-2">Grade</label>
+                                                <select class="form-control form-control-sm col-4" id="id_grade">
+                                                    <option>First</option>
+                                                    <option>Second</option>
+                                                    <option>Third</option>
+                                                    <option>Fourth</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="id_source_of_student" class="col-form-label col-2">Source of Student</label>
+                                                <select class="form-control form-control-sm col-4" id="id_source_of_student">
+                                                    <option>Telephone Invitation</option>
+                                                    <option>Coupon</option>
+                                                    <option>Store Visit</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="id_alt_phoneno" class="col-form-label col-2">Alternative Phone No</label>
+                                                <select class="form-control form-control-sm col-2" id="id_parents2">
+                                                    <option>Mommy</option>
+                                                    <option>Daddy</option>
+                                                    <option>GrandFather</option>
+                                                </select>
+                                                <input class="form-control form-control-sm col-3" type="text" id="id_alt_phoneno" placeholder="">
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="id_homeaddress" class="col-form-label col-2">Home address</label>
+                                                <input class="form-control form-control-sm input-rounded col-6" type="text" id="id_homeaddress" placeholder="">
+                                            </div>
+                                            <input type="button" name="next-step" class="next-step" value="Next Step" />                                            
+                                        </fieldset>
+
+                                        <!--  아이템구입부문 -->
+                                        <fieldset>
+                                            <h2>Purchase Item</h2>
+                                            <div class="form-group row">
+                                                <input class="btn btn-warning ml-4 col-2" type="button" value="Choose a course" data-toggle="modal" data-target="#id_model_choose_course">
+                                                <input class="btn btn-warning ml-4 col-2" type="button" value="Select items" data-toggle="modal" data-target="#id_model_select_item">
+                                                <input class="btn btn-warning ml-4 col-2" type="button" value="Choose a fee" data-toggle="modal" data-target="#id_model_choose_fee">
+                                                <input class="btn btn-warning ml-4 col-2" type="button" value="Choose a package" data-toggle="modal" data-target="#id_model_choose_package">
+                                            </div>
+
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h4 class="header-title">Purchase information</h4>
+                                                    <div class="single-table">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped text-center">
+                                                                <thead class="text-uppercase">
+                                                                    <tr>
+                                                                        <th scope="col">Name</th>
+                                                                        <th scope="col">Pricing Standard</th>
+                                                                        <th scope="col">Unit Price</th>
+                                                                        <th scope="col">Purchase quantity</th>
+                                                                        <th scope="col">Original price</th>
+                                                                        <th scope="col">Number of Gifts</th>
+                                                                        <th scope="col">Discount</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>Mark</td>
+                                                                        <td>09 / 07 / 2018</td>
+                                                                        <td>$120</td>
+                                                                        <td>$120</td>
+                                                                        <td>$120</td>
+                                                                        <td><i class="ti-trash"></i></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <input type="button" name="next-step"
+                                                class="next-step" value="Next Step" />
+                                            <input type="button" name="previous-step"
+                                                class="previous-step"
+                                                value="Previous Step" />
+                                        </fieldset>
+
+                                        <!-- 료금청산부문 -->
+                                        <fieldset>
+                                            <div class="finish">
+                                                <h4 class="header-title">Purchase information</h4>
+                                                <div class="single-table" style="margin-bottom:30px;">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped text-center">
+                                                            <thead class="text-uppercase">
+                                                                <tr>
+                                                                    <th scope="col">Project</th>
+                                                                    <th scope="col">Quantity</th>
+                                                                    <th scope="col">Amount</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>Mark</td>
+                                                                    <td>09 / 07 / 2018</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <h4 class="header-title">Billing Message</h4>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-2">Amount Payable</label>
+                                                    <label class="col-form-label col-2">100 Yuan</label>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="id_actual_amount" class="col-form-label col-2"><span style="color:red;">*</span>Actual amount</label>
+                                                    <input class="form-control form-control-sm col-3" type="text" id="id_actual_amount" placeholder="" required>
+                                                    <label for="id_actual_amount" class="col-form-label col-1">yuan</label>
+                                                    <button type="submit" class="btn btn-primary ml-4 pl-4 pr-4">Full payment</button>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="id_paymentmethod" class="col-form-label col-2">Payment Method</label>
+                                                    <select class="form-control form-control-sm col-4" id="id_paymentmethod">
+                                                        <option>Wheat cash</option>
+                                                        <option>Alipay</option>
+                                                        <option>Wechat</option>
+                                                        <option>Cash</option>
+                                                        <option>Online bank Transfer</option>
+                                                        <option>POS machine</option>
+                                                    </select>
+                                                </div>
+
+                                                <h4 class="header-title">Other Information</h4>
+                                                <div class="form-group row">
+                                                    <label for="id_payment_date" class="col-form-label col-2">Payment date</label>
+                                                    <input class="form-control form-control-sm col-2" type="date" value="2021-05-01" id="id_payment_date">
+                                                    <div class="col-form-label col-3"></div>
+                                                    <label for="id_manager" class="col-form-label col-2">Manager</label>
+                                                    <input class="form-control form-control-sm col-2" type="text" id="id_manager" placeholder="">
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="id_follower" class="col-form-label col-2">Payment date</label>
+                                                    <select class="form-control form-control-sm col-2" id="id_follower">
+                                                        <option>Donald</option>
+                                                        <option>Bush</option>
+                                                        <option>Trumph</option>
+                                                    </select>
+                                                    <div class="col-form-label col-3"></div>
+                                                    <label for="id_remark" class="col-form-label col-2">Remarks</label>
+                                                    <input class="form-control form-control-sm col-2" type="text" id="id_remark" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <input type="button" name="previous-step" class="next-step" value="Confirm" />
+                                            <input type="button" name="previous-step" class="previous-step" value="Previous Step" />
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p>2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<!-- Choose a course 모달조종체 -->
+<div class="modal fade" id="id_model_choose_course">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose a course</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="data-tables">
+                            <table id="dataTable" class="text-center" style="width:100%;">
+                                <thead class="bg-light text-capitalize">
+                                    <tr>
+                                        <th>checkbox</th>
+                                        <th>Course Title</th>
+                                        <th>Course type</th>
+                                        <th>unit price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>checkbox</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>33</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Select Item 모달조종체 -->
+<div class="modal fade" id="id_model_select_item">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose Fee</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="data-tables">
+                            <table id="dataTable2" class="text-center" style="width:100%;">
+                                <thead class="bg-light text-capitalize">
+                                    <tr>
+                                        <th>checkbox</th>
+                                        <th>Item Name</th>
+                                        <th>In stock</th>
+                                        <th>unit price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>Authum school uniform</td>
+                                        <td>20</td>
+                                        <td>$100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Choose Package 모달조종체 -->
+<div class="modal fade" id="id_model_choose_fee">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose Fee</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="data-tables">
+                            <table id="dataTable3" class="text-center" style="width:100%;">
+                                <thead class="bg-light text-capitalize">
+                                    <tr>
+                                        <th>checkbox</th>
+                                        <th>Expense Name</th>
+                                        <th>Unit Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>Deposit in advance</td>
+                                        <td>$100</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Insurance</td>
+                                        <td>$200</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Choose Package 모달조종체 -->
+<div class="modal fade" id="id_model_choose_package">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose Package</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="data-tables">
+                            <table id="id_table_4" class="text-center" style="width:100%;">
+                                <thead class="bg-light text-capitalize">
+                                    <tr>
+                                        <th>Checkbox</th>
+                                        <th>Package Name</th>
+                                        <th>Number of courses</th>
+                                        <th>Number of charge Items</th>
+                                        <th>Package Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

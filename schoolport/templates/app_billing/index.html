@@ -42,7 +42,7 @@
                     </div>
                     <div class="main_item col-md-3">
                         <img class="main_item_image" src="{% static 'assets/img/mainicon/registration_renewal_fee.png' %}">
-                        <a class="main_item_title" href="#">报名续费</a>
+                        <a class="main_item_title" href="{% url 'app_billing:billingcenter-register-student' %}">报名续费</a> <!-- 개발중 -->
                     </div>
                     <div class="main_item col-md-3">
                         <img class="main_item_image" src="{% static 'assets/img/mainicon/refunding_regisitration.png' %}">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="main_item col-md-3">
                         <img class="main_item_image" src="{% static 'assets/img/mainicon/courses_fees.png' %}">
-                        <a class="main_item_title" href="#">课程/收费</a>
+                        <a class="main_item_title" href="{% url 'app_billing:billingcenter-courses-fee' %}">课程/收费</a> <!-- 개발중 -->
                     </div>
                     <div class="main_item col-md-3">
                         <img class="main_item_image" src="{% static 'assets/img/mainicon/charge_on_notice.png' %}">

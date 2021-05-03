@@ -1,0 +1,425 @@
+{% load i18n %}
+{% load static %}
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active show" id="course-tab" data-toggle="tab" href="#course" role="tab" aria-controls="course" aria-selected="true">Course</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="article-tab" data-toggle="tab" href="#article" role="tab" aria-controls="profile" aria-selected="false">Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="cost-tab" data-toggle="tab" href="#cost" role="tab" aria-controls="cost" aria-selected="false">Cost</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="setmeal-tab" data-toggle="tab" href="#setmeal" role="tab" aria-controls="setmeal" aria-selected="false">Set meal</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-3" id="tabContents_CoursesFee">
+                <!-- Course Tab -->
+                <div class="tab-pane fade active show" id="course" role="tabpanel" aria-labelledby="course-tab">
+                    <div class="justify-content-center">
+                        <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+                            <div class="form-group row">
+                                <label for="id_course_name" class="col-form-label col-1">Courses:</label>
+                                <input class="form-control form-control-sm col-2" type="text" id="id_course_name" placeholder="Please enter the course name">
+                                
+                                <label for="id_commodity_name" class="col-form-label col-1">Product Name:</label>
+                                <select class="form-control form-control-sm col-2" id="id_commodity_name">
+                                    <option>Product 1</option>
+                                    <option>Product 2</option>
+                                    <option>Product 3</option>
+                                </select>
+
+                                <label for="id_course_type" class="col-form-label col-1">Course Type:</label>
+                                <select class="form-control form-control-sm col-1" id="id_course_type">
+                                    <option>One to one</option>
+                                    <option>One to Many</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <label for="id_course_status" class="col-form-label col-1">Course Status:</label>
+                                <select class="form-control form-control-sm col-2" id="id_course_status">
+                                    <option>Enable</option>
+                                    <option>Deactive</option>
+                                </select>
+
+                                <label for="id_online_sales" class="col-form-label col-1">Online Sales:</label>
+                                <select class="form-control form-control-sm col-1" id="id_course_type">
+                                    <option>Turned on</option>
+                                    <option>Turned off</option>
+                                </select>
+
+                                <div class="col-1"></div>
+                                <button type="button" class="btn btn-primary mr-2 col-1 coursefeebtn" id="btn_coursefee_new_course" href="{% url 'app_billing:billingcenter-courses-fee-edit' %}">New Course</button>
+                                <button type="button" class="btn btn-primary mr-2 col-2 coursefeebtn" id="btn_coursefee_new_general_course" href="{% url 'app_billing:billingcenter-courses-fee-general-edit' %}" style="max-width:10%;">New General Course</button>
+                                <button type="button" class="btn btn-primary mr-2 col-2 coursefeebtn" style="max-width:12%;">Online mall QR Code</button>
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th scope="col">Course Title</th>
+                                                    <th scope="col">Course Type</th>
+                                                    <th scope="col">Unit Price</th>
+                                                    <th scope="col">Pricing Standard</th>
+                                                    <th scope="col">Number of Students</th>
+                                                    <th scope="col">Online Sale</th>
+                                                    <th scope="col">Enabled State</th>
+                                                    <th scope="col">Operation</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Special Course-Basket ball</th>
+                                                    <td>One to Many</td>
+                                                    <td>100 yuan / month</td>
+                                                    <td>-</td>
+                                                    <td>1</td>
+                                                    <td>Turned Off</td>
+                                                    <td>On</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Early Learning Monthly Card</th>
+                                                    <td>One to Many</td>
+                                                    <td>200 yuan / month</td>
+                                                    <td>-</td>
+                                                    <td>2</td>
+                                                    <td>Turned Off</td>
+                                                    <td>On</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Mathmatics</th>
+                                                    <td>One to Many</td>
+                                                    <td>300 yuan / month</td>
+                                                    <td>-</td>
+                                                    <td>3</td>
+                                                    <td>Turned Off</td>
+                                                    <td>On</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">English</th>
+                                                    <td>One to Many</td>
+                                                    <td>400 yuan / month</td>
+                                                    <td>-</td>
+                                                    <td>4</td>
+                                                    <td>Turned Off</td>
+                                                    <td>On</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Article Tab -->
+                <div class="tab-pane fade" id="article" role="tabpanel" aria-labelledby="article-tab">
+                    <div class="justify-content-center">
+                        <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+                            <div class="form-group row">
+                                <label for="id_article_item_name" class="col-form-label col-1">Courses:</label>
+                                <input class="form-control form-control-sm col-2" type="text" id="id_article_item_name" placeholder="Please enter the item name">
+                                
+                                <label class="col-form-label col-1">Availability:</label>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" checked="" class="custom-control-input" id="id_article_is_availability">
+                                    <label class="custom-control-label" for="id_article_is_availability">Inventory shortage</label>
+                                </div>
+
+                                <label class="col-form-label col-1">Enable state:</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio4">Enable</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio5">Deactivate</label>
+                                </div>
+                                <div class="col-1"></div>
+                                <input class="btn btn-warning ml-4 col-1" type="button" value="New Item" data-toggle="modal" data-target="#id_model_article_newitem">
+                            </div>
+                        </div>
+
+                        <div class="alert-dismiss" style="margin-top:10px;">
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                <span style="margin-left: 20px; color:orange">The sales details of the items can be viewd in "Finance-Receipt Details"</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span class="fa fa-times"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th scope="col">Item Name</th>
+                                                    <th scope="col">Unit Price</th>
+                                                    <th scope="col">Remaining Inventory</th>
+                                                    <th scope="col">Bound Course</th>
+                                                    <th scope="col">Enabled State</th>
+                                                    <th scope="col">Operation</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Autumn school uniform</th>
+                                                    <td>100 yuan</td>
+                                                    <td>-20</td>
+                                                    <td>Unbound</td>
+                                                    <td>Enabled</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Summer school uniform</th>
+                                                    <td>50 yuan</td>
+                                                    <td>10</td>
+                                                    <td>Unbound</td>
+                                                    <td>Enabled</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Middle class textbook</th>
+                                                    <td>200 yuan</td>
+                                                    <td>120</td>
+                                                    <td>Unbound</td>
+                                                    <td>Enabled</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Cost Tab -->
+                <div class="tab-pane fade" id="cost" role="tabpanel" aria-labelledby="cost-tab">
+                    <div class="justify-content-center">
+                        <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+                            <div class="form-group row">
+                                <label for="id_cost_search_fee" class="col-form-label col-1">Serach Fee:</label>
+                                <input class="form-control form-control-sm col-2" type="text" id="id_cost_search_fee" placeholder="Please enter fee name">
+
+                                <label class="col-form-label col-1">Enable state:</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio4">Enable</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio5">Deactivate</label>
+                                </div>
+                                <div class="col-1"></div>
+                                <button type="button" class="btn btn-primary mr-2 col-1" data-toggle="modal" data-target="#id_model_cost_newcost">New Cost</button>
+                            </div>
+                        </div>
+
+                        <div class="alert-dismiss" style="margin-top:10px;">
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                <span style="margin-left: 20px; color:orange">The sales details of the items can be viewd in "Finance-Receipt Details"</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span class="fa fa-times"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th scope="col">Expense Name</th>
+                                                    <th scope="col">Unit Price</th>
+                                                    <th scope="col">Bound Course</th>
+                                                    <th scope="col">Enabled State</th>
+                                                    <th scope="col">Operation</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Deposit in advance</th>
+                                                    <td>100 yuan</td>
+                                                    <td>Unbound</td>
+                                                    <td>Enabled</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Insurance</th>
+                                                    <td>200 yuan</td>
+                                                    <td>Unbound</td>
+                                                    <td>Enabled</td>
+                                                    <td><i class="ti-trash"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Set Meal Tab -->
+                <div class="tab-pane fade" id="setmeal" role="tabpanel" aria-labelledby="setmeal-tab">
+                    <div class="justify-content-center">
+                        <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+                            <div class="form-group row">
+                                <label for="id_setmeal_search_package" class="col-form-label col-1">Serach package:</label>
+                                <input class="form-control form-control-sm col-2" type="text" id="id_setmeal_search_package" placeholder="Please enter the package name">
+
+                                <label class="col-form-label col-1">Enable state:</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio4">Enable</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio5">Deactivate</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th scope="col">Package Name</th>
+                                                    <th scope="col">Number of Courses</th>
+                                                    <th scope="col">Number of the Stuffs</th>
+                                                    <th scope="col">Number of Fees</th>
+                                                    <th scope="col">Package Price</th>
+                                                    <th scope="col">Enabled State</th>
+                                                    <th scope="col">Operating</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<!-- Article New Item 모달조종체 -->
+<div class="modal fade" id="id_model_article_newitem">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">New Item</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Item Name:</label>
+                            <input class="form-control form-control-sm col-5" type="text" id="" placeholder="Please enter item name">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Unit price:</label>
+                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                            <label class="col-form-label col-1">yuan</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Inventory warning number:</label>
+                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-2">Bound course:</label>
+                            <input class="btn btn-warning ml-4 col-2" type="button" value="Add class">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">carry out</button>
+                <button type="button" class="btn btn-primary">Complete and increase inventory</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cost New cost 모달조종체 -->
+<div class="modal fade" id="id_model_cost_newcost">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">New Cost</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="alert alert-warning" role="alert">
+                                <strong>Warning!</strong> Please add charge items other than "courses" and "items".
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Expense name:</label>
+                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Unit price:</label>
+                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                            <label class="col-form-label col-1">yuan</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-2">Bound course:</label>
+                            <input class="btn btn-warning ml-4 col-2" type="button" value="Add class">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

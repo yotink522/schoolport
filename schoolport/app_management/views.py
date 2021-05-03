@@ -22,3 +22,35 @@ class App_ManagementIndexView(View):
             return render(request, "base_admin.html", context)
 
 
+class App_Management_ManageStudentView(View):
+    template_name = "app_management/managestudent.html"
+    data = dict()
+    def get(self, request):
+        context = {
+            'sidebar':'app_management',
+            'navbar':'',
+            'appname': 'managestudent',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class App_Management_ManageClassView(View):
+    template_name = "app_management/manage_class.html"
+    data = dict()
+    def get(self, request):
+        context = {
+            'sidebar':'app_management',
+            'navbar':'',
+            'appname': 'manageclass',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+

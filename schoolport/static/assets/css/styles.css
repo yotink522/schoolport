@@ -2914,3 +2914,26 @@ table.dataTable thead td {
     color: #919191;
     font-size: 20px;
 }
+
+.form-group {
+    align-items: center;
+}
+
+.modal div.dataTables_wrapper div.dataTables_length select{
+    width:60px;
+}
+
+.div_managestudent .form-group{
+    margin-bottom:0px;
+}
+.div_managestudent .form-group select{
+    height:auto !important;
+}
+
+.div_managestudent .card-body{
+    padding-bottom:0px;
+}
+
+#tabContents_CoursesFee label{
+    text-align: right;
+}

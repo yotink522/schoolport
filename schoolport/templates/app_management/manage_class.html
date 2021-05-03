@@ -1,0 +1,128 @@
+{% load i18n %}
+{% load static %}
+<div class="div_managestudent">
+    <div class="card-body row">
+        <div class="form-group col-md-3">
+            <label for="id_search_studentname" class="">Search for students</label>
+            <input class="form-control" type="text" placeholder="Please enter the student's name/phone" id="id_search_studentname">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="id_search_enrolled_courses" class="">Enrolled courses</label>
+            <select class="form-control" id="id_search_enrolled_courses" placeholder="Please select a course">
+                <option>Specail Course-Basketball</option>
+                <option>Specail Course-Logical Thinking</option>
+                <option>Magic Castle Monthly Card</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="id_search_class" class="">Class</label>
+            <select class="form-control" id="id_search_class">
+                <option>Magic Castle 1</option>
+                <option>Mathmatic 2</option>
+                <option>Physical 3</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="card-body row">
+        <div class="form-group col-md-3">
+            <label for="id_search_follower" class="">Follower</label>
+            <select class="form-control" id="id_search_follower">
+                <option>To be assigned</option>
+                <option>Yuan Lin</option>
+                <option>Zhang Yue</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="id_search_schoolmanager" class="">School Manager</label>
+            <select class="form-control" id="id_search_schoolmanager">
+                <option>To be assigned</option>
+                <option>Zhang Jiko</option>
+                <option>Li SoRyong</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="id_search_age" class="">Student Age</label>
+            <input class="form-control" type="text" placeholder="Please select age" id="id_search_age">
+        </div>
+    </div>
+
+    <div class="card-body row">
+        <div class="form-group col-md-3">
+            <label for="id_search_teacher" class="">Class Teacher</label>
+            <select class="form-control" id="id_search_teacher">
+                <option>To be assigned</option>
+                <option>Yuan Lin</option>
+                <option>Zhang Yue</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="id_search_birthdaymonth" class="">Birthday Month</label>
+            <select class="form-control" id="id_search_birthdaymonth">
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="id_search_purchasepackage" class="">Purchase Package</label>
+            <select class="form-control" id="id_search_purchasepackage">
+                <option>Package 1</option>
+                <option>Package 2</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="alert-dismiss" style="margin-top:10px;">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            WeChat binding number<string>139,</strong>&nbsp;&nbsp;&nbsp;WeChat binding rate <string>44.13%</string>, &nbsp;&nbsp;&nbsp; exceed <string>19.47%</string> <span style="margin-left: 20px; color:orange"> Increase parent binding rate, build word of mouth to help renewal</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span class="fa fa-times"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="single-table">
+                <div class="table-responsive">
+                    <table class="table table-striped text-center">
+                        <thead class="text-uppercase">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">Human Face</th>
+                                <th scope="col">Purchase Hours</th>
+                                <th scope="col">Free Class Hours</th>
+                                <th scope="col">Hours Consumed</th>
+                                <th scope="col">Amount of lesson consumption</th>
+                                <th scope="col">Remaining class hours</th>
+                                <th scope="col">Number of Absences</th>
+                                <th scope="col">Integral</th>
+                                <th scope="col">Birthday</th>
+                                <th scope="col">Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Test</th>
+                                <td>12828346634</td>
+                                <td>Avatar</td>
+                                <td>10</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>3</td>
+                                <td>12</td>
+                                <td>0</td>
+                                <td>2019-08-22</td>
+                                <td><i class="ti-trash"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

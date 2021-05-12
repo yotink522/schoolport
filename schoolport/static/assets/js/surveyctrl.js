@@ -7,6 +7,13 @@ $(document).ready(function () {
 	setProgressBar(current);
 
 	$(".next-step").click(function () {
+		//만일 course 나 비품을 구매하지 않았을 경우 stop
+		/*
+		if (current == 2 && $('#table_purchased_info >tbody tr').length < 1){
+			alert('수량을 입력하시오');
+			return;
+		}
+		*/
 
 		currentGfgStep = $(this).parent();
 		nextGfgStep = $(this).parent().next();

@@ -1,0 +1,58 @@
+[
+    {
+        "model": "app_core.tb_param_items",
+        "pk": 1,
+        "fields": {
+            "item_name": "Autumn school uniform",
+            "item_quantity": 100,
+            "price": 100.0,
+            "price_unit": "piece",
+            "price_currency": "Yuan"
+        }
+    },
+    {
+        "model": "app_core.tb_param_items",
+        "pk": 2,
+        "fields": {
+            "item_name": "Summer school uniform",
+            "item_quantity": 20,
+            "price": 60.0,
+            "price_unit": "piece",
+            "price_currency": "Yuan"
+        }
+    },
+    {
+        "model": "app_core.tb_param_items",
+        "pk": 3,
+        "fields": {
+            "item_name": "Textbook1",
+            "item_quantity": 100,
+            "price": 20.2,
+            "price_unit": "book",
+            "price_currency": "Yuan"
+        }
+    },
+    {
+        "model": "app_core.tb_param_items",
+        "pk": 4,
+        "fields": {
+            "item_name": "Small Class Materials",
+            "item_quantity": 10,
+            "price": 10.0,
+            "price_unit": "pen",
+            "price_currency": "Yuan"
+        }
+    },
+    {
+        "model": "app_core.tb_param_items",
+        "pk": 5,
+        "fields": {
+            "item_name": "Middle Class Textbook",
+            "item_quantity": -6,
+            "price": 87.0,
+            "price_unit": "book",
+            "price_currency": "Yuan"
+        }
+    }
+]
+

@@ -1,0 +1,31 @@
+[
+    {
+        "model": "app_core.tb_param_sourceofstudent",
+        "pk": 1,
+        "fields": {
+            "source_name_en": "Store Visit"
+        }
+    },
+    {
+        "model": "app_core.tb_param_sourceofstudent",
+        "pk": 2,
+        "fields": {
+            "source_name_en": "Telephone Invitation"
+        }
+    },
+    {
+        "model": "app_core.tb_param_sourceofstudent",
+        "pk": 3,
+        "fields": {
+            "source_name_en": "Transfer introduction"
+        }
+    },
+    {
+        "model": "app_core.tb_param_sourceofstudent",
+        "pk": 4,
+        "fields": {
+            "source_name_en": "Coupon"
+        }
+    }
+]
+    

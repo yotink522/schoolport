@@ -1,0 +1,33 @@
+[
+    {
+        "model": "app_core.tb_price_standards",
+        "pk": 1,
+        "fields": {
+            "price": 1000.0,
+            "price_currency": "Yuan",
+            "price_unit": "Year",
+            "course_id": 1
+        }
+    },
+    {
+        "model": "app_core.tb_price_standards",
+        "pk": 2,
+        "fields": {
+            "price": 100.0,
+            "price_currency": "Yuan",
+            "price_unit": "Month",
+            "course_id": 1
+        }
+    },
+    {
+        "model": "app_core.tb_price_standards",
+        "pk": 3,
+        "fields": {
+            "price": 150.0,
+            "price_currency": "Yuan",
+            "price_unit": "Month",
+            "course_id": 2
+        }
+    }
+]
+

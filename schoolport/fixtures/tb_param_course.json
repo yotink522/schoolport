@@ -1,0 +1,24 @@
+[
+    {
+        "model": "app_core.tb_param_course",
+        "pk": 1,
+        "fields": {
+            "course_name": "Mathmatic",
+            "course_type": "One To One",
+            "price": 100.0,
+            "price_unit": "month",
+            "price_currency": "Yuan"
+        }
+    },
+    {
+        "model": "app_core.tb_param_course",
+        "pk": 2,
+        "fields": {
+            "course_name": "Sports",
+            "course_type": "One To Many",
+            "price": 150.0,
+            "price_unit": "month",
+            "price_currency": "Yuan"
+        }
+    }
+]

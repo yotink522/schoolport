@@ -1,0 +1,20 @@
+[
+    {
+        "model": "app_core.tb_param_fees",
+        "pk": 1,
+        "fields": {
+            "fee_name": "Deposit in advance",
+            "price": 1000.0,
+            "price_currency": "Yuan"
+        }
+    },
+    {
+        "model": "app_core.tb_param_fees",
+        "pk": 2,
+        "fields": {
+            "fee_name": "Insurance",
+            "price": 100.0,
+            "price_currency": "Yuan"
+        }
+    }
+]

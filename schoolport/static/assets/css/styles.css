@@ -2937,3 +2937,6 @@ table.dataTable thead td {
 #tabContents_CoursesFee label{
     text-align: right;
 }
+#tabContents_ChargePerNotice label{
+    text-align: right;
+}

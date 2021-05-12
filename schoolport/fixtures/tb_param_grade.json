@@ -1,0 +1,45 @@
+[
+    {
+        "model": "app_core.tb_param_grade",
+        "pk": 1,
+        "fields": {
+            "grade_desc": "First grade"
+        }
+    },
+    {
+        "model": "app_core.tb_param_grade",
+        "pk": 2,
+        "fields": {
+            "grade_desc": "Second grade"
+        }
+    },
+    {
+        "model": "app_core.tb_param_grade",
+        "pk": 3,
+        "fields": {
+            "grade_desc": "Third grade"
+        }
+    },
+    {
+        "model": "app_core.tb_param_grade",
+        "pk": 4,
+        "fields": {
+            "grade_desc": "Fourth grade"
+        }
+    },
+    {
+        "model": "app_core.tb_param_grade",
+        "pk": 5,
+        "fields": {
+            "grade_desc": "Fifth grade"
+        }
+    },
+    {
+        "model": "app_core.tb_param_grade",
+        "pk": 6,
+        "fields": {
+            "grade_desc": "Sixth grade"
+        }
+    }
+]
+    

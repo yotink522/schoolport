@@ -256,6 +256,8 @@
                     {% include 'app_billing/courses_fee_edit.html'%}
                 {% elif sidebar == 'billingcenter' and appname == 'coursesfeegeneraledit' %} <!-- 시간표편집1  -->
                     {% include 'app_billing/courses_fee_generaledit.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'chargepernotice' %} <!-- 통지대로 료금받기  -->
+                    {% include 'app_billing/charge_per_notice.html'%}
                 
                 {% elif sidebar == 'app_management' and appname == 'managestudent' %} <!-- 학생관리-->
                     {% include 'app_management/managestudent.html'%}
@@ -502,6 +504,7 @@
     <script src="{% static 'assets/js/scripts.js' %}"></script>
     <script src="{% static 'assets/js/navigate.js' %}"></script>
     <script src="{% static 'assets/js/surveyctrl.js' %}"></script>
+    <script src="{% static 'assets/js/app_billing.js' %}"></script>
     <script src="{% static 'assets/js/front_main.js' %}"></script>
 
     

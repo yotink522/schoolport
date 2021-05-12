@@ -9,10 +9,10 @@
                     <a class="nav-link active show" id="course-tab" data-toggle="tab" href="#course" role="tab" aria-controls="course" aria-selected="true">Course</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="article-tab" data-toggle="tab" href="#article" role="tab" aria-controls="profile" aria-selected="false">Article</a>
+                    <a class="nav-link" id="article-tab" data-toggle="tab" href="#article" role="tab" aria-controls="profile" aria-selected="false">Item</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="cost-tab" data-toggle="tab" href="#cost" role="tab" aria-controls="cost" aria-selected="false">Cost</a>
+                    <a class="nav-link" id="cost-tab" data-toggle="tab" href="#cost" role="tab" aria-controls="cost" aria-selected="false">Fee</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="setmeal-tab" data-toggle="tab" href="#setmeal" role="tab" aria-controls="setmeal" aria-selected="false">Set meal</a>
@@ -170,7 +170,7 @@
                             <div class="card-body">
                                 <div class="single-table">
                                     <div class="table-responsive">
-                                        <table class="table table-striped text-center">
+                                        <table class="table table-striped text-center" id="table_coursefee_itemlist">
                                             <thead class="text-uppercase">
                                                 <tr>
                                                     <th scope="col">Item Name</th>
@@ -182,30 +182,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">Autumn school uniform</th>
-                                                    <td>100 yuan</td>
-                                                    <td>-20</td>
+                                            {% for item in item_list %}
+                                                <tr class="tr_itemlist">
+                                                    <input type="hidden" value='{{item.id}}' />
+                                                    <td scope="row">{{item.item_name}}</th>
+                                                    <td>{{item.unit_price}}&nbsp;{{item.currency}}</td>
+                                                    <td>{{item.stock_amount}}</td>
                                                     <td>Unbound</td>
-                                                    <td>Enabled</td>
-                                                    <td><i class="ti-trash"></i></td>
+                                                    <td>{% if item.status == 1 %}Enabled{%else%}Disabled{%endif%}</td>
+                                                    <td>
+                                                        <i class="ti-pencil"></i>
+                                                        <i class="ti-clipboard"></i>
+                                                        <i class="ti-trash"></i>
+                                                    </td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">Summer school uniform</th>
-                                                    <td>50 yuan</td>
-                                                    <td>10</td>
-                                                    <td>Unbound</td>
-                                                    <td>Enabled</td>
-                                                    <td><i class="ti-trash"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Middle class textbook</th>
-                                                    <td>200 yuan</td>
-                                                    <td>120</td>
-                                                    <td>Unbound</td>
-                                                    <td>Enabled</td>
-                                                    <td><i class="ti-trash"></i></td>
-                                                </tr>
+                                            {% endfor %}
                                             </tbody>
                                         </table>
                                     </div>
@@ -216,7 +207,7 @@
                     </div>
                 </div>
 
-                <!-- Cost Tab -->
+                <!-- Fee Tab -->
                 <div class="tab-pane fade" id="cost" role="tabpanel" aria-labelledby="cost-tab">
                     <div class="justify-content-center">
                         <div class="px-0 pt-4 pb-0 mt-3 mb-3">
@@ -234,7 +225,7 @@
                                     <label class="custom-control-label" for="customRadio5">Deactivate</label>
                                 </div>
                                 <div class="col-1"></div>
-                                <button type="button" class="btn btn-primary mr-2 col-1" data-toggle="modal" data-target="#id_model_cost_newcost">New Cost</button>
+                                <button type="button" class="btn btn-primary mr-2 col-1" data-toggle="modal" data-target="#id_model_cost_newfee">New Fee</button>
                             </div>
                         </div>
 
@@ -251,10 +242,10 @@
                             <div class="card-body">
                                 <div class="single-table">
                                     <div class="table-responsive">
-                                        <table class="table table-striped text-center">
+                                        <table class="table table-striped text-center" id="table_coursefee_feelist">
                                             <thead class="text-uppercase">
                                                 <tr>
-                                                    <th scope="col">Expense Name</th>
+                                                    <th scope="col">Fee Name</th>
                                                     <th scope="col">Unit Price</th>
                                                     <th scope="col">Bound Course</th>
                                                     <th scope="col">Enabled State</th>
@@ -262,20 +253,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">Deposit in advance</th>
-                                                    <td>100 yuan</td>
+                                            {% for fee in fee_list %}
+                                                <tr class="tr_feelist">
+                                                    <input type="hidden" value='{{fee.id}}' />
+                                                    <td scope="row">{{fee.fee_name}}</th>
+                                                    <td>{{fee.unit_price}}&nbsp;{{fee.currency}}</td>
                                                     <td>Unbound</td>
-                                                    <td>Enabled</td>
-                                                    <td><i class="ti-trash"></i></td>
+                                                    <td>{% if fee.status == 1 %}Enabled{%else%}Disabled{%endif%}</td>
+                                                    <td>
+                                                        <i class="ti-pencil mr-4"></i>
+                                                        <i class="ti-trash"></i>
+                                                    </td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">Insurance</th>
-                                                    <td>200 yuan</td>
-                                                    <td>Unbound</td>
-                                                    <td>Enabled</td>
-                                                    <td><i class="ti-trash"></i></td>
-                                                </tr>
+                                            {% endfor %}
                                             </tbody>
                                         </table>
                                     </div>
@@ -355,17 +345,17 @@
                         <div class="form-group row">
                             <div class="col-1"></div>
                             <label class="col-form-label col-2">Item Name:</label>
-                            <input class="form-control form-control-sm col-5" type="text" id="" placeholder="Please enter item name">
+                            <input class="form-control form-control-sm col-5 cf_itemdlg" type="text" id="id_cf_newitem_itemname" placeholder="Please enter item name">
                         </div>
                         <div class="form-group row">
                             <div class="col-1"></div>
                             <label class="col-form-label col-2">Unit price:</label>
-                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                            <input class="form-control form-control-sm col-4 cf_itemdlg" type="text" id="id_cf_newitem_unitprice" placeholder="">
                             <label class="col-form-label col-1">yuan</label>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3">Inventory warning number:</label>
-                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                            <label class="col-form-label col-3">Quantity:</label>
+                            <input class="form-control form-control-sm col-4 cf_itemdlg" type="text" id="id_cf_newitem_quantity" placeholder="">
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-2">Bound course:</label>
@@ -375,19 +365,62 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">carry out</button>
-                <button type="button" class="btn btn-primary">Complete and increase inventory</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="id_btn_newitem_dlg_cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" id="id_btn_newitem_add">Add</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Cost New cost 모달조종체 -->
-<div class="modal fade" id="id_model_cost_newcost">
+<!-- Article Edit Item 모달조종체 -->
+<div class="modal fade" id="id_model_article_edititem">
+    <input type="hidden" id="id_cf_edititem_itemid">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">New Cost</h5>
+                <h5 class="modal-title">Edit Item</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Item Name:</label>
+                            <input class="form-control form-control-sm col-5 cf_itemdlg" type="text" id="id_cf_edititem_itemname" placeholder="Please enter item name">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Unit price:</label>
+                            <input class="form-control form-control-sm col-4 cf_itemdlg" type="text" id="id_cf_edititem_unitprice" placeholder="">
+                            <label class="col-form-label col-1">yuan</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-3">Quantity:</label>
+                            <input class="form-control form-control-sm col-4 cf_itemdlg" type="text" id="id_cf_edititem_quantity" placeholder="">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-2">Bound course:</label>
+                            <input class="btn btn-warning ml-4 col-2" type="button" value="Add class">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="id_btn_edititem_dlg_cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" id="id_btn_edititem_save">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Cost New fee 모달조종체 -->
+<div class="modal fade" id="id_model_cost_newfee">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">New Fee</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
             <div class="modal-body">
@@ -400,13 +433,13 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-1"></div>
-                            <label class="col-form-label col-2">Expense name:</label>
-                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                            <label class="col-form-label col-2">Fee name:</label>
+                            <input class="form-control form-control-sm col-4 cf_feedlg" type="text" id="id_cf_newfee_feename" placeholder="">
                         </div>
                         <div class="form-group row">
                             <div class="col-1"></div>
                             <label class="col-form-label col-2">Unit price:</label>
-                            <input class="form-control form-control-sm col-4" type="text" id="" placeholder="">
+                            <input class="form-control form-control-sm col-4 cf_feedlg" type="text" id="id_cf_newfee_unitprice" placeholder="">
                             <label class="col-form-label col-1">yuan</label>
                         </div>
                         <div class="form-group row">
@@ -417,8 +450,46 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id='id_btn_newfee_dlg_cancel'>Cancel</button>
+                <button type="button" class="btn btn-primary" id="id_btn_newfee_add">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cost Edit Fee 모달조종체 -->
+<div class="modal fade" id="id_model_article_editfee">
+    <input type="hidden" id="id_cf_editfee_feeid">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Fee</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Fee Name:</label>
+                            <input class="form-control form-control-sm col-5 cf_feedlg" type="text" id="id_cf_editfee_feename" placeholder="Please enter fee name">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-1"></div>
+                            <label class="col-form-label col-2">Unit price:</label>
+                            <input class="form-control form-control-sm col-4 cf_feedlg" type="text" id="id_cf_editfee_unitprice" placeholder="">
+                            <label class="col-form-label col-1">yuan</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-2">Bound course:</label>
+                            <input class="btn btn-warning ml-4 col-2" type="button" value="Add class">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="id_btn_editfee_dlg_cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" id="id_btn_editfee_save">Save</button>
             </div>
         </div>
     </div>

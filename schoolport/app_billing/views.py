@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.urls.base import reverse_lazy
 from django.views import View
+from django.views.generic import TemplateView
+
 from django.views.generic.base import TemplateResponseMixin
 from django.template.loader import render_to_string
 from django.http import JsonResponse, HttpResponse
@@ -25,7 +27,7 @@ class BillingCenter_Index_View(View):
     def get(self, request):
         context = {
             'sidebar':'billingcenter',
-            'navbar':''
+            'navbar':'',
         }
 
         if request.is_ajax():
@@ -65,8 +67,10 @@ class BillingCenter_RegisterStudent_View(View):
 class BillingCenter_CoursesFee_View(View):
     template_name = "app_billing/courses_fee.html"
     data = dict()
-    
+
     def get(self, request):
+
+        course_list = TB_Course.objects.all().order_by('id')
         item_list = TB_Items.objects.all().order_by('id')
         fee_list = TB_Fees.objects.all().order_by('id')
 
@@ -74,13 +78,14 @@ class BillingCenter_CoursesFee_View(View):
             'sidebar':'billingcenter',
             'navbar':'',
             'appname': 'coursesfee',
-
+            
+            'course_list' : course_list,
             'item_list' : item_list,
             'fee_list' : fee_list
         }
 
         if request.is_ajax():
-            self.data['html_index'] = render_to_string(self.template_name, {'item_list':item_list})
+            self.data['html_index'] = render_to_string(self.template_name, {'course_list': course_list, 'item_list':item_list, 'fee_list': fee_list})
             return JsonResponse(self.data)
         else:
             return render(request, "base_admin.html", context)
@@ -139,6 +144,299 @@ class BillingCenter_ChargePerNoticeIndex_View(View):
         else:
             return render(request, "base_admin.html", context)
 
+
+# Scancode Index View
+class BillingCenter_ScanCodeIndex_View(View):
+    template_name = "app_billing/pay_charge.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'scancodetocharge',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+# Scancode Index View
+class BillingCenter_ScanCodeAddChargeQRCode_View(View):
+    template_name = "app_billing/pay_charge_add.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'scancodetocharge_addchgqrcode',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+# Scancode Index View
+class BillingCenter_ScanCodeConsolidate(View):
+    template_name = "app_billing/pay_charge_consolidate.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'scancodetocharge_consolidate',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_ScanCodeProjectDetail(View):
+    template_name = "app_billing/pay_charge_projectdetail.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'scancodetocharge_projectdetail',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_PaymentTransactions(View):
+    template_name = "app_billing/pay_breakeven.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'payment_transactionlog',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_ClassManagement(View):
+    template_name = "app_billing/pay_classM.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'classmanagement',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_ClassManagement_Add(View):
+    template_name = "app_billing/pay_classM_add.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'classmanagement_add',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)            
+
+class BillingCenter_ClassManagement_Edit(View):
+    template_name = "app_billing/pay_classM_editBatch.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'classmanagement_edit',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_PaymentReceipt(View):
+    template_name = "app_billing/pay_electronicReceipts.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'payment_receipt',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+
+class BillingCenter_StudentManagement(View):
+    template_name = "app_billing/pay_studentM.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'student_management',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_StudentManagement_AddStudent(View):
+    template_name = "app_billing/pay_studentM_add.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'student_management_add',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_FacultyManagement(View):
+    template_name = "app_billing/pay_facultyM.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'faculty_management',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_FacultyManagement_AddFaculty(View):
+    template_name = "app_billing/pay_facultyM_add.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'faculty_management_add',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_PayRefundRequestIndex(View):
+    template_name = "app_billing/pay_refund_request.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'pay_refund_request_index',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_PayRefundRequest_AddBatch(View):
+    template_name = "app_billing/pay_refund_request_addBatch.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'pay_refund_request_addbatch',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_PayRefundTransactionLogs(View):
+    template_name = "app_billing/pay_refund_viewDetail.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'pay_refund_transaction_logs',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
+
+class BillingCenter_PayRevenue(View):
+    template_name = "app_billing/pay_revenue_statstics.html"
+    data = dict()
+    
+    def get(self, request):
+        context = {
+            'sidebar':'billingcenter',
+            'navbar':'',
+            'appname': 'pay_revenue',
+        }
+
+        if request.is_ajax():
+            self.data['html_index'] = render_to_string(self.template_name, {})
+            return JsonResponse(self.data)
+        else:
+            return render(request, "base_admin.html", context)
 
 
 
@@ -361,3 +659,12 @@ class Ajax_CourseFee_EditFee(View):
         fee_list = TB_Fees.objects.all().order_by('id')
         resp = core_serializers.serialize('json', fee_list)
         return JsonResponse(resp, safe=False)
+
+@method_decorator(csrf_exempt, name='dispatch') 
+class Ajax_CourseFee_AddCourse(View):
+    def post(self, request):
+        course_serializer = AddCourseSerializer(data = json.loads(request.body))
+        if course_serializer.is_valid(raise_exception=True):
+            course_serializer.save()
+
+        return JsonResponse("OK", safe=False)

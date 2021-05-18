@@ -33,13 +33,26 @@ class TB_School(models.Model):
 # e,g) 수학강좌, 물리강좌, 화학강좌, ...
 class TB_Course(models.Model):
     course_name = models.CharField(_("Name of Course"), max_length=255)         # 강좌이름
-    course_type = models.CharField(_("Course Type"), max_length=50, null=True, default=EMPTY_VALUES)            # 강좌이름
-    price = models.FloatField(null=True)                                       # 가격
-    price_unit = models.CharField(null=True, max_length=50)                    # per day, Month, Year
-    price_currency = models.CharField(null=True, max_length=20)                # Yuan, USD, ...
+    type = models.IntegerField(default=1)                                       # 강좌형태 e.g) 1: Normal Course, 2: General Course
+    course_type = models.CharField(_("Course Type"), max_length=50, null=True, default=0)            # One to One, One to Many
+    class_schedule_color = models.CharField(max_length=255, null=True)          # Red, Blue, Yellow, Green, White
+    price_hour = models.FloatField(null=True)                                       # 가격
+    price_hour_status = models.BooleanField(default=False)     #시간당가격청구가 선택되여있는지
+
+    price_month = models.FloatField(null=True)            
+    price_month_status = models.BooleanField(default=False)    #월가격청구가 선택되여있는지 
+                               # 가격
+    currency = models.CharField(max_length=10, default='CNY', null=True)
+    course_status = models.IntegerField(default=1)                              # 1: Enabled, 0: Disabled
+    number_of_students = models.IntegerField(default=0)                         # 학생수
+
+    pricing_standard_nos = models.CharField(max_length=255, null=True, blank=True)
+    deduction_rule1 = models.IntegerField(default=0)  # 0: No Deduction, 1: Buckle
+    deduction_rule2 = models.IntegerField(default=0)  # 0: No Deduction, 1: Buckle
+    remarks = models.CharField(max_length=1024, null=True, blank=True)
 
     def __str__(self):
-        pass
+        return self.course_name
 
 # 학급테이블 : TB_Class
 # e,g) 1학년 1반, 2학년 2반, ...

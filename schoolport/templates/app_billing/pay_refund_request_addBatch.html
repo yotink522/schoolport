@@ -1,0 +1,105 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content">      
+    <!--Scan Code to Charge start-->
+    <div class="content">
+        <div class='title'>
+            Request a batch refund
+        </div>
+        <div class = "table">
+            <table class="layout_table autowidth">
+                <tr>
+                    <td>Refund item</td>
+                    <td>
+                        <div class="item">
+                            <button class="border" style="margin-left: 20px;" data-toggle="modal" data-target="#modal_projectName_add">+ Please select the refund item</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal_projectName_add">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Select the refund item</h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="item">
+                                                <input class="form-control" style="width: 418px;" type="text" placeholder="Please enter a keyword query">
+                                                <button class="default" style="margin-left: 20px;">Inquire</button>
+                                            </div>
+                                        
+                                            <table class="normal_table" style="width: 100%; margin-top: 20px;">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th style="width: 30px;"></th>
+                                                        <th>Project Name</th>
+                                                        <th>Start date</th>
+                                                        <th>Deadline</th>
+                                                        <th>Charging scene</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 30px; padding: 0px; text-align: center; vertical-align: middle;">      
+                                                            <input class="normal_check" type="checkbox">
+                                                        </td>
+                                                        <td>Dianshi International Education Center</td>
+                                                        <td>2019-08-01 11:00:00</td>
+                                                        <td>2021-12-31 23:59:59	</td>
+                                                        <td>In effect</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="projectName_modal_ok" type="button" class="default">Determine</button>
+                                            <button type="button" class="border closeBtn" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--Modal End-->
+                        </div>
+                        
+                        <div style="margin-left: 30px; margin-top: 20px;">
+                            Project selected: <span class='red_color_text'>2</span>
+                        </div>
+
+                        <div class="item" style="margin-left: 50px;">
+                            <div class="item_datelist"><i class="fa fa-minus-circle"></i>deleteMeals for April 2021</div>
+                            <div class="item_datelist"><i class="fa fa-minus-circle"></i>May 2021 Nursery Fee</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Template download</td>
+                    <td>
+                        <div class="item">
+                            <a href="#" style="margin-left: 20px;"><i class="fa fa-download"></i>Batch Refund Template-Download  </a>
+                            <label style="margin-left: 20px; color: red">(Reminder: The template contains a list of students who have paid for the selected refund item)</label>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Select a document</td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                <label class="custom-file-label" for="inputGroupFile01">Select the document</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                <button class="default">Refresh</button>
+                <button class="border">Return</button>
+            </div>
+        </div>
+    </div><!--Scan Code to Charge end-->
+</div>
+
+  

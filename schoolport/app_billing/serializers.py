@@ -43,3 +43,23 @@ class AddFeeSerializer(serializers.ModelSerializer):
             'status',
         )
 
+class AddCourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TB_Course
+        fields = (
+            'course_name',
+            'type',
+            'course_type',
+            'class_schedule_color',
+            'price_hour',
+            'price_hour_status',
+            'price_month',
+            'price_month_status',
+            'currency',
+            'course_status',
+            'number_of_students',
+            'pricing_standard_nos',
+            'deduction_rule1',
+            'deduction_rule2',
+            'remarks',
+        )

@@ -218,7 +218,7 @@
                             <li>
                                 <div class="user-profile">
                                     <img class="avatar user-thumb" src="{% static 'assets/img/author/avatar.png' %}" alt="avatar">
-                                    <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
+                                    <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><i class="fa fa-angle-down"></i></h4>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Message</a>
                                         <a class="dropdown-item" href="#">Settings</a>
@@ -231,14 +231,13 @@
                 </div>
             </div>
             <!-- header area end -->
-            
-            
+
             <!--###########################  main area ########################### -->
             <div id="div_main_contents">
                 {% if sidebar == 'dashboard' and appname == '' %}
                     {% include 'app_dashboard/index.html'%}
                 {% elif sidebar == 'billingcenter' and appname == '' %}
-                    {% include 'app_billing/index.html'%}
+                    {% include 'app_billing/index.html' %}
                 {% elif sidebar == 'app_attendance' and appname == '' %}
                     {% include 'app_attendance/index.html'%}
                 {% elif sidebar == 'app_interaction' and appname == '' %}
@@ -247,7 +246,6 @@
                     {% include 'app_management/index.html'%}
                 {% elif sidebar == 'app_studying' and appname == '' %}
                     {% include 'app_studying/index.html'%}
-
                 {% elif sidebar == 'billingcenter' and appname == 'registerstudent' %} <!-- 학생등록 -->
                     {% include 'app_billing/registerstudent.html'%}
                 {% elif sidebar == 'billingcenter' and appname == 'coursesfee' %} <!-- 시간표관리-->
@@ -259,6 +257,44 @@
                 {% elif sidebar == 'billingcenter' and appname == 'chargepernotice' %} <!-- 통지대로 료금받기  -->
                     {% include 'app_billing/charge_per_notice.html'%}
                 
+                
+                {% elif sidebar == 'billingcenter' and appname == 'scancodetocharge' %} 
+                    {% include 'app_billing/pay_charge.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'scancodetocharge_addchgqrcode' %} 
+                    {% include 'app_billing/pay_charge_add.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'scancodetocharge_consolidate' %} 
+                    {% include 'app_billing/pay_charge_consolidate.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'scancodetocharge_projectdetail' %} 
+                    {% include 'app_billing/pay_charge_projectdetail.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'payment_transactionlog' %} 
+                    {% include 'app_billing/pay_breakeven.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'classmanagement' %} 
+                    {% include 'app_billing/pay_classM.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'classmanagement_add' %} 
+                    {% include 'app_billing/pay_classM_add.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'classmanagement_edit' %} 
+                    {% include 'app_billing/pay_classM_editBatch.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'payment_receipt' %} 
+                    {% include 'app_billing/pay_electronicReceipts.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'student_management' %} 
+                    {% include 'app_billing/pay_studentM.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'student_management_add' %} 
+                    {% include 'app_billing/pay_studentM_add.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'faculty_management' %} 
+                    {% include 'app_billing/pay_facultyM.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'faculty_management_add' %} 
+                    {% include 'app_billing/pay_facultyM_add.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'pay_refund_request_index' %} 
+                    {% include 'app_billing/pay_refund_request.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'pay_refund_request_addbatch' %} 
+                    {% include 'app_billing/pay_refund_request_addBatch.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'pay_refund_transaction_logs' %} 
+                    {% include 'app_billing/pay_refund_viewDetail.html'%}
+                {% elif sidebar == 'billingcenter' and appname == 'pay_revenue' %} 
+                    {% include 'app_billing/pay_revenue_statstics.html'%}
+
+
+
                 {% elif sidebar == 'app_management' and appname == 'managestudent' %} <!-- 학생관리-->
                     {% include 'app_management/managestudent.html'%}
                 {% elif sidebar == 'app_management' and appname == 'manageclass' %} <!-- 학급관리-->
@@ -506,6 +542,11 @@
     <script src="{% static 'assets/js/surveyctrl.js' %}"></script>
     <script src="{% static 'assets/js/app_billing.js' %}"></script>
     <script src="{% static 'assets/js/front_main.js' %}"></script>
+
+    <script src="{% static 'assets/js/prettify.js' %}"></script>
+    <script src="{% static 'assets/js/wysihtml5-0.3.0.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-wysihtml5.js' %}"></script>
+    
 
     
 

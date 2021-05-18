@@ -1,0 +1,127 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content" style="padding: 20px;">      
+    <!--Review start-->
+    <div class='title'>
+        Refund application and inquiry
+    </div>
+    <div class='sub_title'>
+        Refund inquiry
+    </div>
+    <!--Download pan start-->
+    <div class="download_pan">
+        <a href="#"><i class="fa fa-download"></i>Refund Application and Inquiry Operation Guide</a>
+        <a href="#"><i class="fa fa-play-circle-o"></i>View operation video</a>
+    </div><!--Download pan end-->
+    <div class="header">
+        <form method="get" action="" onsubmit="">
+            <div class="form-group">
+                <div class="item">
+                    <label>Transaction order number</label>
+                    <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                </div>
+
+                <div class="item">
+                    <label>Submission Date</label>	
+                    <input class="form-control" type="date">
+                    <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                    <input class="form-control" type="date">
+                </div>
+                
+                <div class="item">
+                    <label>project name</label>
+                    <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                </div>
+
+                <div class="item">
+                    <label>Remarks</label>
+                    <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                </div>
+
+                <div class="item">
+                    <label> Refund status</label>
+                    <select name="valid" class = "form-control" value="">
+                        <option value="">--Refund status--</option>
+                        <option value="0">Refund successfully</option>
+                        <option value="1">Refunding</option>
+                        <option value="2">Refund failed</option>
+                    </select>
+                </div>
+
+                <div class="item">
+                    <input type="submit" value="Inquire">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+        <div class="btn-group">
+            <button class="default">Export to Excel</button>
+        </div>
+
+        <div class="btn-group">
+            <button id="btn_back" class="border">Return</button>
+            <button class="border">Home</button>
+        </div>
+
+    </div>
+
+    <div class="table">
+        <table id="dataTable1" class='no_sort'>
+            <thead>
+                <tr>
+                    <th colspan="11">
+                        退款成功总额&nbsp;：<span class="red_color_text">573.00</span>元，共<span class="red_color_text">2</span>笔
+                    </th>
+                </tr>
+                <tr>
+                    <th width="15%">Submission time</th>
+                    <th width="9%">Transaction order number</th>
+                    <th width="10%">project name</th>
+                    <th width="6%">Refund amount (yuan)</th>
+                    <th width="8%">payment method</th>
+                    <th width="10%">Refund instructions</th>
+                    <th width="20%">Remarks</th>
+                    <th width="5%">Refund status</th>
+                    <th width="5%">Submitter</th>
+                    <th width="7%">Processing instructions</th>
+                    <th width="5%">operating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2021-05-06 13:54</td>
+                    <td>572522770327875584</td>
+                    <td>2021年05月保教费</td>
+                    <td>423.00</td>
+                    <td>微信支付</td>
+                    <td>退返4月入园多交托费;</td>
+                    <td>凤城市点石幼儿园-托班（2）班-张暖</td>
+                    <td><em style="color: green;">退款成功</em</td>
+                    <td>宋兆朋</td>
+                    <td></td>
+                    <td>
+                        <input type="button" value="Detail">
+                                
+                    </td>
+                </tr>	
+                <tr>
+                    <td>2021-04-25 11:27</td>
+                    <td>570929309845663744</td>
+                    <td>点石国际教育中心</td>
+                    <td>150.00</td>
+                    <td>支付宝支付</td>
+                    <td>多交费用；美术材料费入园时已经缴纳，无需重复缴费;</td>
+                    <td>_徐梓铭_15665955556_乐高</td>
+                    <td><em style="color: green;">退款成功</em></td>
+                    <td>宋兆朋</td>
+                    <td></td>
+                    <td>
+                        <input type="button" value="Detail">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--Review end-->
+</div>

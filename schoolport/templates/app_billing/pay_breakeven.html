@@ -1,0 +1,1785 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content">      
+    <ul class="nav nav-tabs mb-3" id="mainTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#tab_balance" role="tab" aria-controls="tab_balance" aria-selected="true">Balance(total)</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#tab_wechat" role="tab" aria-controls="tab_wechat" aria-selected="false">Wechat Pay</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#tab_alipay" role="tab" aria-controls="tab_alipay" aria-selected="false">Pay with Ali-Pay</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#tab_cash" role="tab" aria-controls="tab_cash" aria-selected="false">Cash</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#tab_bank" role="tab" aria-controls="tab_bank" aria-selected="false">Bank transfer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#tab_POS" role="tab" aria-controls="tab_POS" aria-selected="false">POS swipe</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#tab_other" role="tab" aria-controls="tab_other" aria-selected="false">Other payment</a>
+        </li>
+    </ul>
+    <!--Download pan start-->
+    <div class="download_pan">
+        <a class="fr f-height44 link-2 mr20" href="#" target="_blank"><i class="fa fa-download"></i>Operational Guidelines for Reconciliation Management</a>
+        <a class="fr f-height44 link-2 mr20" href="#" target="_blank"><i class="fa fa-play-circle-o"></i>View operation video</a>
+    </div><!--Download pan end-->
+
+    <div class="tab-content" id="mainTabContent">
+        <div class="tab-pane fade show active" id="tab_balance" role="tabpanel">
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label> transaction hour</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+
+                        <div class="item">
+                            <label>Payment items</label>
+                            <input class="form-control" type="text" placeholder="Please enter key words">
+                        </div>
+
+                        <div class="item">
+                            <label>class</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>student name</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Transaction order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>WeChat/Alipay order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Amount range</label>
+                            <input class="form-control" type="text">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label>Payment method </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check141">
+                            <label class="form-check-label" for="check141">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check142">
+                            <label class="form-check-label" for="check142">WeChat Pay</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check143">
+                            <label class="form-check-label" for="check143">Pay with Ali-Pay</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check144">
+                            <label class="form-check-label" for="check144">cash payment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check145">
+                            <label class="form-check-label" for="check145">Bank Transfer</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check146">
+                            <label class="form-check-label" for="check146">POS swipe</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check147">
+                            <label class="form-check-label" for="check147">other methods</label>
+                        </div>  
+                    </div>
+
+                    <div class="item">
+                        <label>Payment scenario </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1411">
+                            <label class="form-check-label" for="check1411">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1412">
+                            <label class="form-check-label" for="check1412">Charge by notice</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1413">
+                            <label class="form-check-label" for="check1413">Scan code to charge</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1414">
+                            <label class="form-check-label" for="check1414">Top-up refund amount</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1415">
+                            <label class="form-check-label" for="check1415">Campus consignment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1416">
+                            <label class="form-check-label" for="check1416">School card recharge</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1417">
+                            <label class="form-check-label" for="check1417">Pay by face</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1418">
+                            <label class="form-check-label" for="check1418">The first recharge amount of the all-in-one card</label>
+                        </div>  
+                    </div>
+
+
+                    <div class="item">
+                        <label>Transaction Type</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check14111">
+                            <label class="form-check-label" for="check14111">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check14112">
+                            <label class="form-check-label" for="check14112">Receive payment</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check14113">
+                            <label class="form-check-label" for="check14113">Refund</label>
+                        </div>  
+                    </div>
+
+                    <input type="submit" value="Inquire">
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export to Excel</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable" claass = "no_sort">
+                    <thead>
+                        <tr>
+                            <th colspan="12">
+                                收款总额 ：<span class="red_color_text">514854.00</span>元，共<span class="green_color_text">705</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                退款总额 ：<span class="red_color_text">2123.00</span>元，共<span class="green_color_text">7</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th width="10%">交易完成时间</th>
+                            <th width="15%">交易订单号</th>
+                            <th width="10%">支付场景</th>
+                            <th width="15%">支付项目</th>
+                            <th width="10%">班级</th>
+                            <th width="10%">学生姓名</th>
+                            <th width="15%">收费项（元）</th>
+                            <th width="10%">交易类型</th>
+                            <th width="10%">订单金额(元)</th>
+                            <th width="10%">支付方式</th>
+                            <th width="30%">备注信息</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Transaction completion time</th>
+                            <th width="15%">Transaction order number</th>
+                            <th width="10%">Payment scenario</th>
+                            <th width="15%">Payment items</th>
+                            <th width="10%">class</th>
+                            <th width="10%">student name</th>
+                            <th width="15%">Charges (yuan)</th>
+                            <th width="10%">Transaction Type</th>
+                            <th width="10%">Order amount (yuan)</th>
+                            <th width="10%">payment method</th>
+                            <th width="30%">Remarks information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab_wechat" role="tabpanel">
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label> transaction hour</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+
+                        <div class="item">
+                            <label>Payment items</label>
+                            <input class="form-control" type="text" placeholder="Please enter key words">
+                        </div>
+
+                        <div class="item">
+                            <label>class</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>student name</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Transaction order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>WeChat/Alipay order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Amount range</label>
+                            <input class="form-control" type="text">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label>Payment method </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check211">
+                            <label class="form-check-label" for="check211">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check212">
+                            <label class="form-check-label" for="check212">WeChat Pay</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check213">
+                            <label class="form-check-label" for="check213">Pay with Ali-Pay</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check214">
+                            <label class="form-check-label" for="check214">cash payment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check215">
+                            <label class="form-check-label" for="check521">Bank Transfer</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check216">
+                            <label class="form-check-label" for="check216">POS swipe</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check217">
+                            <label class="form-check-label" for="check217">other methods</label>
+                        </div>  
+                    </div>
+
+                    <div class="item">
+                        <label>Payment scenario </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2111">
+                            <label class="form-check-label" for="check2111">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2112">
+                            <label class="form-check-label" for="check2112">Charge by notice</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2113">
+                            <label class="form-check-label" for="check2113">Scan code to charge</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2114">
+                            <label class="form-check-label" for="check2114">Top-up refund amount</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2115">
+                            <label class="form-check-label" for="check2115">Campus consignment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2116">
+                            <label class="form-check-label" for="check2116">School card recharge</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2117">
+                            <label class="form-check-label" for="check2117">Pay by face</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2118">
+                            <label class="form-check-label" for="check2118">The first recharge amount of the all-in-one card</label>
+                        </div>  
+                    </div>
+
+
+                    <div class="item">
+                        <label>Transaction Type</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2131">
+                            <label class="form-check-label" for="check2131">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2132">
+                            <label class="form-check-label" for="check2132">Receive payment</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2133">
+                            <label class="form-check-label" for="check2133">Refund</label>
+                        </div>  
+                    </div>
+
+                    <input type="submit" value="Inquire">
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export to Excel</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable" claass = "no_sort">
+                    <thead>
+                        <tr>
+                            <th colspan="12">
+                                收款总额 ：<span class="red_color_text">514854.00</span>元，共<span class="green_color_text">705</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                退款总额 ：<span class="red_color_text">2123.00</span>元，共<span class="green_color_text">7</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th width="10%">交易完成时间</th>
+                            <th width="15%">交易订单号</th>
+                            <th width="10%">支付场景</th>
+                            <th width="15%">支付项目</th>
+                            <th width="10%">班级</th>
+                            <th width="10%">学生姓名</th>
+                            <th width="15%">收费项（元）</th>
+                            <th width="10%">交易类型</th>
+                            <th width="10%">订单金额(元)</th>
+                            <th width="10%">支付方式</th>
+                            <th width="30%">备注信息</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Transaction completion time</th>
+                            <th width="15%">Transaction order number</th>
+                            <th width="10%">Payment scenario</th>
+                            <th width="15%">Payment items</th>
+                            <th width="10%">class</th>
+                            <th width="10%">student name</th>
+                            <th width="15%">Charges (yuan)</th>
+                            <th width="10%">Transaction Type</th>
+                            <th width="10%">Order amount (yuan)</th>
+                            <th width="10%">payment method</th>
+                            <th width="30%">Remarks information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab_alipay" role="tabpanel">
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label> transaction hour</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+
+                        <div class="item">
+                            <label>Payment items</label>
+                            <input class="form-control" type="text" placeholder="Please enter key words">
+                        </div>
+
+                        <div class="item">
+                            <label>class</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>student name</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Transaction order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>WeChat/Alipay order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Amount range</label>
+                            <input class="form-control" type="text">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label>Payment method </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check311">
+                            <label class="form-check-label" for="check1">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check312">
+                            <label class="form-check-label" for="check312">WeChat Pay</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check313">
+                            <label class="form-check-label" for="check313">Pay with Ali-Pay</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check314">
+                            <label class="form-check-label" for="check314">cash payment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check315">
+                            <label class="form-check-label" for="check315">Bank Transfer</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check316">
+                            <label class="form-check-label" for="check316">POS swipe</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check317">
+                            <label class="form-check-label" for="check317">other methods</label>
+                        </div>  
+                    </div>
+
+                    <div class="item">
+                        <label>Payment scenario </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3111">
+                            <label class="form-check-label" for="check3111">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3112">
+                            <label class="form-check-label" for="check3112">Charge by notice</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3113">
+                            <label class="form-check-label" for="check3113">Scan code to charge</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3114">
+                            <label class="form-check-label" for="check3114">Top-up refund amount</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3115">
+                            <label class="form-check-label" for="check3115">Campus consignment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3116">
+                            <label class="form-check-label" for="check3116">School card recharge</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3117">
+                            <label class="form-check-label" for="check3117">Pay by face</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3118">
+                            <label class="form-check-label" for="check3118">The first recharge amount of the all-in-one card</label>
+                        </div>  
+                    </div>
+
+
+                    <div class="item">
+                        <label>Transaction Type</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3131">
+                            <label class="form-check-label" for="check3131">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3132">
+                            <label class="form-check-label" for="check3132">Receive payment</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check3133">
+                            <label class="form-check-label" for="check3133">Refund</label>
+                        </div>  
+                    </div>
+
+                    <input type="submit" value="Inquire">
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export to Excel</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable" claass = "no_sort">
+                    <thead>
+                        <tr>
+                            <th colspan="12">
+                                收款总额 ：<span class="red_color_text">514854.00</span>元，共<span class="green_color_text">705</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                退款总额 ：<span class="red_color_text">2123.00</span>元，共<span class="green_color_text">7</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th width="10%">交易完成时间</th>
+                            <th width="15%">交易订单号</th>
+                            <th width="10%">支付场景</th>
+                            <th width="15%">支付项目</th>
+                            <th width="10%">班级</th>
+                            <th width="10%">学生姓名</th>
+                            <th width="15%">收费项（元）</th>
+                            <th width="10%">交易类型</th>
+                            <th width="10%">订单金额(元)</th>
+                            <th width="10%">支付方式</th>
+                            <th width="30%">备注信息</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Transaction completion time</th>
+                            <th width="15%">Transaction order number</th>
+                            <th width="10%">Payment scenario</th>
+                            <th width="15%">Payment items</th>
+                            <th width="10%">class</th>
+                            <th width="10%">student name</th>
+                            <th width="15%">Charges (yuan)</th>
+                            <th width="10%">Transaction Type</th>
+                            <th width="10%">Order amount (yuan)</th>
+                            <th width="10%">payment method</th>
+                            <th width="30%">Remarks information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab_cash" role="tabpanel">
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label> transaction hour</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+
+                        <div class="item">
+                            <label>Payment items</label>
+                            <input class="form-control" type="text" placeholder="Please enter key words">
+                        </div>
+
+                        <div class="item">
+                            <label>class</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>student name</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Transaction order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>WeChat/Alipay order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Amount range</label>
+                            <input class="form-control" type="text">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label>Payment method </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check411">
+                            <label class="form-check-label" for="check1">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check412">
+                            <label class="form-check-label" for="check412">WeChat Pay</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check413">
+                            <label class="form-check-label" for="check413">Pay with Ali-Pay</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check414">
+                            <label class="form-check-label" for="check414">cash payment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check415">
+                            <label class="form-check-label" for="check415">Bank Transfer</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check416">
+                            <label class="form-check-label" for="check416">POS swipe</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check417">
+                            <label class="form-check-label" for="check417">other methods</label>
+                        </div>  
+                    </div>
+
+                    <div class="item">
+                        <label>Payment scenario </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4111">
+                            <label class="form-check-label" for="check4111">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4112">
+                            <label class="form-check-label" for="check4112">Charge by notice</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4113">
+                            <label class="form-check-label" for="check13">Scan code to charge</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4114">
+                            <label class="form-check-label" for="check4114">Top-up refund amount</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4115">
+                            <label class="form-check-label" for="check4115">Campus consignment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4116">
+                            <label class="form-check-label" for="check4116">School card recharge</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4117">
+                            <label class="form-check-label" for="check4117">Pay by face</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4118">
+                            <label class="form-check-label" for="check4118">The first recharge amount of the all-in-one card</label>
+                        </div>  
+                    </div>
+
+
+                    <div class="item">
+                        <label>Transaction Type</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4141">
+                            <label class="form-check-label" for="check4141">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4112">
+                            <label class="form-check-label" for="check4142">Receive payment</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check4143">
+                            <label class="form-check-label" for="check4143">Refund</label>
+                        </div>  
+                    </div>
+
+                    <input type="submit" value="Inquire">
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export to Excel</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable" claass = "no_sort">
+                    <thead>
+                        <tr>
+                            <th colspan="12">
+                                收款总额 ：<span class="red_color_text">514854.00</span>元，共<span class="green_color_text">705</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                退款总额 ：<span class="red_color_text">2123.00</span>元，共<span class="green_color_text">7</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th width="10%">交易完成时间</th>
+                            <th width="15%">交易订单号</th>
+                            <th width="10%">支付场景</th>
+                            <th width="15%">支付项目</th>
+                            <th width="10%">班级</th>
+                            <th width="10%">学生姓名</th>
+                            <th width="15%">收费项（元）</th>
+                            <th width="10%">交易类型</th>
+                            <th width="10%">订单金额(元)</th>
+                            <th width="10%">支付方式</th>
+                            <th width="30%">备注信息</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Transaction completion time</th>
+                            <th width="15%">Transaction order number</th>
+                            <th width="10%">Payment scenario</th>
+                            <th width="15%">Payment items</th>
+                            <th width="10%">class</th>
+                            <th width="10%">student name</th>
+                            <th width="15%">Charges (yuan)</th>
+                            <th width="10%">Transaction Type</th>
+                            <th width="10%">Order amount (yuan)</th>
+                            <th width="10%">payment method</th>
+                            <th width="30%">Remarks information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab_bank" role="tabpanel">
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label> transaction hour</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+
+                        <div class="item">
+                            <label>Payment items</label>
+                            <input class="form-control" type="text" placeholder="Please enter key words">
+                        </div>
+
+                        <div class="item">
+                            <label>class</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>student name</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Transaction order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>WeChat/Alipay order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Amount range</label>
+                            <input class="form-control" type="text">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label>Payment method </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check531">
+                            <label class="form-check-label" for="check531">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check532">
+                            <label class="form-check-label" for="check532">WeChat Pay</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check533">
+                            <label class="form-check-label" for="check533">Pay with Ali-Pay</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check534">
+                            <label class="form-check-label" for="check534">cash payment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check535">
+                            <label class="form-check-label" for="check535">Bank Transfer</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check536">
+                            <label class="form-check-label" for="check536">POS swipe</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check537">
+                            <label class="form-check-label" for="check537">other methods</label>
+                        </div>  
+                    </div>
+
+                    <div class="item">
+                        <label>Payment scenario </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5311">
+                            <label class="form-check-label" for="check5311">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5312">
+                            <label class="form-check-label" for="check5312">Charge by notice</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5313">
+                            <label class="form-check-label" for="check5313">Scan code to charge</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5314">
+                            <label class="form-check-label" for="check5314">Top-up refund amount</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5315">
+                            <label class="form-check-label" for="check5315">Campus consignment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5316">
+                            <label class="form-check-label" for="check5316">School card recharge</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5317">
+                            <label class="form-check-label" for="check5317">Pay by face</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5318">
+                            <label class="form-check-label" for="check5318">The first recharge amount of the all-in-one card</label>
+                        </div>  
+                    </div>
+
+
+                    <div class="item">
+                        <label>Transaction Type</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5351">
+                            <label class="form-check-label" for="check5351">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5352">
+                            <label class="form-check-label" for="check5352">Receive payment</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check5353">
+                            <label class="form-check-label" for="check5353">Refund</label>
+                        </div>  
+                    </div>
+
+                    <input type="submit" value="Inquire">
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export to Excel</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable" claass = "no_sort">
+                    <thead>
+                        <tr>
+                            <th colspan="12">
+                                收款总额 ：<span class="red_color_text">514854.00</span>元，共<span class="green_color_text">705</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                退款总额 ：<span class="red_color_text">2123.00</span>元，共<span class="green_color_text">7</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th width="10%">交易完成时间</th>
+                            <th width="15%">交易订单号</th>
+                            <th width="10%">支付场景</th>
+                            <th width="15%">支付项目</th>
+                            <th width="10%">班级</th>
+                            <th width="10%">学生姓名</th>
+                            <th width="15%">收费项（元）</th>
+                            <th width="10%">交易类型</th>
+                            <th width="10%">订单金额(元)</th>
+                            <th width="10%">支付方式</th>
+                            <th width="30%">备注信息</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Transaction completion time</th>
+                            <th width="15%">Transaction order number</th>
+                            <th width="10%">Payment scenario</th>
+                            <th width="15%">Payment items</th>
+                            <th width="10%">class</th>
+                            <th width="10%">student name</th>
+                            <th width="15%">Charges (yuan)</th>
+                            <th width="10%">Transaction Type</th>
+                            <th width="10%">Order amount (yuan)</th>
+                            <th width="10%">payment method</th>
+                            <th width="30%">Remarks information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab_POS" role="tabpanel">
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label> transaction hour</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+
+                        <div class="item">
+                            <label>Payment items</label>
+                            <input class="form-control" type="text" placeholder="Please enter key words">
+                        </div>
+
+                        <div class="item">
+                            <label>class</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>student name</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Transaction order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>WeChat/Alipay order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Amount range</label>
+                            <input class="form-control" type="text">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label>Payment method </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check641">
+                            <label class="form-check-label" for="check641">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check642">
+                            <label class="form-check-label" for="check642">WeChat Pay</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check643">
+                            <label class="form-check-label" for="check643">Pay with Ali-Pay</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check644">
+                            <label class="form-check-label" for="check644">cash payment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check645">
+                            <label class="form-check-label" for="check645">Bank Transfer</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check646">
+                            <label class="form-check-label" for="check646">POS swipe</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check647">
+                            <label class="form-check-label" for="check647">other methods</label>
+                        </div>  
+                    </div>
+
+                    <div class="item">
+                        <label>Payment scenario </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6411">
+                            <label class="form-check-label" for="check6411">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6412">
+                            <label class="form-check-label" for="check6412">Charge by notice</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6413">
+                            <label class="form-check-label" for="check6413">Scan code to charge</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6414">
+                            <label class="form-check-label" for="check6414">Top-up refund amount</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6415">
+                            <label class="form-check-label" for="check6415">Campus consignment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6416">
+                            <label class="form-check-label" for="check6416">School card recharge</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6417">
+                            <label class="form-check-label" for="check6417">Pay by face</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6418">
+                            <label class="form-check-label" for="check6418">The first recharge amount of the all-in-one card</label>
+                        </div>  
+                    </div>
+
+
+                    <div class="item">
+                        <label>Transaction Type</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6461">
+                            <label class="form-check-label" for="check6461">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6462">
+                            <label class="form-check-label" for="check6462">Receive payment</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check6463">
+                            <label class="form-check-label" for="check23">Refund</label>
+                        </div>  
+                    </div>
+
+                    <input type="submit" value="Inquire">
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export to Excel</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable" claass = "no_sort">
+                    <thead>
+                        <tr>
+                            <th colspan="12">
+                                收款总额 ：<span class="red_color_text">514854.00</span>元，共<span class="green_color_text">705</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                退款总额 ：<span class="red_color_text">2123.00</span>元，共<span class="green_color_text">7</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th width="10%">交易完成时间</th>
+                            <th width="15%">交易订单号</th>
+                            <th width="10%">支付场景</th>
+                            <th width="15%">支付项目</th>
+                            <th width="10%">班级</th>
+                            <th width="10%">学生姓名</th>
+                            <th width="15%">收费项（元）</th>
+                            <th width="10%">交易类型</th>
+                            <th width="10%">订单金额(元)</th>
+                            <th width="10%">支付方式</th>
+                            <th width="30%">备注信息</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Transaction completion time</th>
+                            <th width="15%">Transaction order number</th>
+                            <th width="10%">Payment scenario</th>
+                            <th width="15%">Payment items</th>
+                            <th width="10%">class</th>
+                            <th width="10%">student name</th>
+                            <th width="15%">Charges (yuan)</th>
+                            <th width="10%">Transaction Type</th>
+                            <th width="10%">Order amount (yuan)</th>
+                            <th width="10%">payment method</th>
+                            <th width="30%">Remarks information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab_other" role="tabpanel">
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label> transaction hour</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+
+                        <div class="item">
+                            <label>Payment items</label>
+                            <input class="form-control" type="text" placeholder="Please enter key words">
+                        </div>
+
+                        <div class="item">
+                            <label>class</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>student name</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Transaction order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>WeChat/Alipay order number</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="item">
+                            <label>Amount range</label>
+                            <input class="form-control" type="text">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label>Payment method </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check751">
+                            <label class="form-check-label" for="check751">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check752">
+                            <label class="form-check-label" for="check752">WeChat Pay</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check753">
+                            <label class="form-check-label" for="check753">Pay with Ali-Pay</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check754">
+                            <label class="form-check-label" for="check754">cash payment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check755">
+                            <label class="form-check-label" for="check755">Bank Transfer</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check756">
+                            <label class="form-check-label" for="check756">POS swipe</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check757">
+                            <label class="form-check-label" for="check757">other methods</label>
+                        </div>  
+                    </div>
+
+                    <div class="item">
+                        <label>Payment scenario </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7511">
+                            <label class="form-check-label" for="check7511">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7512">
+                            <label class="form-check-label" for="check7512">Charge by notice</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7513">
+                            <label class="form-check-label" for="check7513">Scan code to charge</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7514">
+                            <label class="form-check-label" for="check7514">Top-up refund amount</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7515">
+                            <label class="form-check-label" for="check7515">Campus consignment</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7516">
+                            <label class="form-check-label" for="check7516">School card recharge</label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7517">
+                            <label class="form-check-label" for="check7517">Pay by face</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7518">
+                            <label class="form-check-label" for="check7518">The first recharge amount of the all-in-one card</label>
+                        </div>  
+                    </div>
+
+
+                    <div class="item">
+                        <label>Transaction Type</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7571">
+                            <label class="form-check-label" for="check7571">All</label>
+                        </div>  
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7572">
+                            <label class="form-check-label" for="check7572">Receive payment</label>
+                        </div>  
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check7573">
+                            <label class="form-check-label" for="check7573">Refund</label>
+                        </div>  
+                    </div>
+
+                    <input type="submit" value="Inquire">
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export to Excel</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable" claass = "no_sort">
+                    <thead>
+                        <tr>
+                            <th colspan="12">
+                                收款总额 ：<span class="red_color_text">514854.00</span>元，共<span class="green_color_text">705</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="12">
+                                退款总额 ：<span class="red_color_text">2123.00</span>元，共<span class="green_color_text">7</span>笔;
+                            </th>
+                        </tr>
+                        <tr>
+                            <th width="10%">交易完成时间</th>
+                            <th width="15%">交易订单号</th>
+                            <th width="10%">支付场景</th>
+                            <th width="15%">支付项目</th>
+                            <th width="10%">班级</th>
+                            <th width="10%">学生姓名</th>
+                            <th width="15%">收费项（元）</th>
+                            <th width="10%">交易类型</th>
+                            <th width="10%">订单金额(元)</th>
+                            <th width="10%">支付方式</th>
+                            <th width="30%">备注信息</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">Transaction completion time</th>
+                            <th width="15%">Transaction order number</th>
+                            <th width="10%">Payment scenario</th>
+                            <th width="15%">Payment items</th>
+                            <th width="10%">class</th>
+                            <th width="10%">student name</th>
+                            <th width="15%">Charges (yuan)</th>
+                            <th width="10%">Transaction Type</th>
+                            <th width="10%">Order amount (yuan)</th>
+                            <th width="10%">payment method</th>
+                            <th width="30%">Remarks information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021-05-15 17:17:00</td>
+                            <td>578269431243567104</td>							
+                            <td>扫码收费</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>张鹤腾</td>
+                            <td>自定义金额收费  500</td>
+                            <td><em class="green_color_text">收款</em></td>							
+                            <td><em class="green">500.00</em></td>
+                            <td>微信支付</td>
+                            <td>_张鹤腾_13694150600_其他</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    (function($) {
+        var gotoPaymentDetail = function(){
+            $("a[href='#tab_paymentdetail']").tab('show');
+        }
+
+
+        $(document).ready(function() {
+
+
+            $('#btn_back').on('click', function () {
+                gotoPaymentDetail();
+            });
+            $('#btn_add_chargeQR').on('click', function () {
+                
+            });
+            
+        });
+
+        
+    })(jQuery);
+
+</script>

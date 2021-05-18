@@ -1,0 +1,423 @@
+{% load i18n %}
+{% load static %}
+<div class="pay-main-content">      
+    <!--Scan Code to Charge start-->
+    <div class="content">
+        <div class='title'>
+            Electronic receipt
+        </div>
+        <div class='alert'>
+            Schools can customize the receipt style. After the setting is successful, the styles of "Export Receipt" and "Electronic Receipt" will be displayed according to the latest settings.
+        </div>
+        <div class = "table">
+            <table class="layout_table">
+                <tr>
+                    <td>Receipt style preview</td>
+                    <td style="padding: 30px;">
+                        <style>
+                            .receipt .box_receipt span{
+                                border-bottom: 1px solid #7c420b;
+                                font-size: 14px;
+                                color: black;
+                                line-height: 45px;
+                                word-break: break-all;
+
+                            }
+                        </style>
+                        <div class="receipt" style="width: 650px;">
+                            <div class="title_receipt">
+                                <p id="receiptTitle_p" style="color: #7c420b; text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 20px;">凤城市点石幼儿园收款收据</p>
+                                <div class="item" style="justify-content: space-between; font-size: 12px; margin: 0px;">
+                                    <div>
+                                        <label>交易时间：</label>
+                                        <span>2017-12-08 10:20:33</span>
+                                    </div>
+                                    <div id="div_transactionHour">
+                                        <label>唯一交易单号：</label>
+                                        <span>81028108209182081028102</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="box_receipt" style="position: relative; border: 1px solid #7c420b; padding: 10px 25px; height: 265px;">
+                                <img id="receipt_stamp" style="display: none; position: absolute; right: 10; bottom: 10" src="label-seal.png">
+
+                                <div>
+                                    <p style="height: 135px;overflow: hidden;">
+                                        <label style="font-size: 16px; color: #7c420b;">今收到</label>
+                                        <span>初三（3）班-张大彪</span>
+                                        
+                                        <label style="font-size: 16px; color: #7c420b; margin-left: 70px;">交来</label> 
+                                        <span id="goodsName_span">18年秋季学杂费</span> 
+                                        <span id="skuName_span">(学费：3000、校车费：300、校服：100、伙食费：200）</span>
+                                        <span id="saleUserInfo_span">;不住宿、校服XL码</span>
+                                        <span id="orderRemark_span">(*djkal;dsjfkladjskfla;djfkla;jdskfla;j)</span>
+                                        <span id="remarkInfo_span"></span>
+
+                                        <span id="empty_span" style="overflow: hidden; overflow-wrap: break-word;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            
+                                            
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <div class="item" style="justify-content: space-between;">
+                                    <div style="display: flex; align-items: center;">
+                                        <label style="font-size: 18px;color: #7c420b;">¥</label>
+                                        <p style="width: 175px; border-bottom: 1px solid #7c420b; padding-left: 10px;">5060.00</p>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <label style="color: #7c420b;">金额（大写）</label>
+                                        <p style="width: 258px; border-bottom: 1px solid #7c420b; padding-left: 10px;">伍仟零陆拾元整</p>
+                                    </div>
+                                </div>
+
+
+                    
+                                <div style="margin-top: 25px;">
+                                    <div id="div_paymentMethod" class="item" style="float: left;">
+                                        <label>支付方式：</label>
+                                        <p>微信支付</p>
+                                    </div>
+                                    <div class="item" style="float: right;">
+                                        <label>经办方：</label>
+                                        <p id="p_managerName">凤城市点石幼儿园</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parent mobile receipt settings</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio1" name="parentMobile" checked>
+                            <label class="control_label" style="width: 100px;" for="radio1">Enable</label>
+                            <p class='red_color_text' style="margin-left: 10px;">(If the parent's online payment is successful, the system will automatically issue the school's customized electronic receipt to the parent's mobile phone, and there is no need to issue a paper receipt. Click to view the electronic receipt example )</p>
+                        </div>
+                        <div class="item">
+                            <input type="radio" id="radio2"  name="parentMobile">
+                            <label class="control_label" style="width: 100px;" for="radio2">Shut down</label>
+                            <p class='red_color_text' style="margin-left: 10px;">(The system will not issue the school's customized electronic receipt, but in order to facilitate the query of transaction records and ensure the payment is successful, the school will issue a special payment voucher for school payment)</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Receipt name</td>
+                    <td>
+                        <input id="txt_title" class="form-control" style="width: 100%;" type="text" value="凤城市点石幼儿园收款收据">
+                    </td>
+                </tr>
+                <tr>
+                    <td>transaction hour</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio3" name="transactionHour" checked>
+                            <label class="control_label" for="radio3">Display</label>
+                
+                            <input type="radio" id="radio4"  name="transactionHour">
+                            <label class="control_label" for="radio4">Hide</label>
+                
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>project name</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio5" name="projectName" checked>
+                            <label class="control_label" for="radio5">Display according to the actual project charge name</label>
+                
+                            <input type="radio" id="radio6"  name="projectName">
+                            <label class="control_label" for="radio6">Use uniform charge item name</label>
+                            <input id="txt_projectName" style="width: 230px" class="form-control" type="text" value="凤城市点石幼儿园代收费用">
+                
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Name of payment item + amount	</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio7" name="nameAmount" checked>
+                            <label class="control_label" for="radio7">Display</label>
+                
+                            <input type="radio" id="radio8"  name="nameAmount">
+                            <label class="control_label" for="radio8">Hide</label>
+                
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>payment method</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio9" name="paymentMethod" checked>
+                            <label class="control_label" for="radio9">Display</label>
+                
+                            <input type="radio" id="radio10"  name="paymentMethod">
+                            <label class="control_label" for="radio10">Hide</label>
+                
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Scan code user registration information</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio11" name="userInfo" checked>
+                            <label class="control_label" for="radio11">Show all</label>
+                
+                            <input type="radio" id="radio12"  name="userInfo">
+                            <label class="control_label" for="radio12">Only show class, student name</label>
+                
+                            <input type="radio" id="radio13"  name="userInfo">
+                            <label class="control_label" for="radio13">Hide</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Remarks information</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio14" name="remarkInfo" checked>
+                            <label class="control_label" style="width: 100px;" for="radio14">Display</label>
+                            <p class='red_color_text' style="margin-left: 10px;">(After selection, the remarks in the [Payment Management] and [Payment Details] list will be displayed in the receipt)</p>
+                        </div>
+                        <div class="item">
+                            <input type="radio" id="radio15"  name="remarkInfo">
+                            <label class="control_label" style="width: 100px;" for="radio15">Hide</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Manager</td>
+                    <td>
+                        <input id="txt_managerName" class="form-control" style="width: 100%;" type="text" value="凤城市点石幼儿园">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Unified receipt description</td>
+                    <td>
+                        <textarea id="txt_otherDescription" class="form-control" style="width: 100%; height: 90px; padding-top: 5px;" type="text"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Receipt size setting</td>
+                    <td>
+                        <div class="item">
+                            <label>Printing paper:</label>
+                            <input type="radio" id="radio18" name="printPaper" checked>
+                            <label class="control_label" for="radio18">A4 paper</label>
+                        
+                            <input type="radio" id="radio19"  name="printPaper">
+                            <label class="control_label" for="radio19">Stylus paper</label>
+                        </div>
+
+                        <div class="item">
+                            <label>Receipt size:</label>
+                            <div class="item group_receiptSize_A4">
+                                <input type="radio" id="radio20" name="receiptSizeA4" checked>
+                                <label class="control_label" for="radio20">One page and one receipt</label>
+                            
+                                <input type="radio" id="radio21"  name="receiptSizeA4">
+                                <label class="control_label" for="radio21">Two receipts on one page</label>
+
+                                <input type="radio" id="radio22"  name="receiptSizeA4">
+                                <label class="control_label" for="radio22">Three receipts on one page</label>
+                            </div>
+                            <div class="item group_receiptSize_Style" style="display: none;">
+                                <input type="radio" id="radio23" name="receiptSizeStyle" checked>
+                                <label class="control_label" for="radio23">241mm*279mm paper divided into three equal parts</label>
+                            
+                                <input type="radio" id="radio24"  name="receiptSizeStyle">
+                                <label class="control_label" for="radio24">241mm*279mm paper is divided into two parts
+                                </label>
+
+                                <input type="radio" id="radio25"  name="receiptSizeStyle">
+                                <label class="control_label" for="radio25">241mm*279mm paper first division
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+                <tr>
+                    <td>Charge seal settings</td>
+                    <td>
+                        <div class="item">
+                            <input type="radio" id="radio16" name="chargeSealSettings">
+                            <label class="control_label" for="radio16">Use school pay pass payment voucher seal</label>
+                        
+                            <input type="radio" id="radio17"  name="chargeSealSettings" checked>
+                            <label class="control_label" for="radio17">Do not use seal</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                <button class="default">Save Settings</button>
+                <button class="border">Return</button>
+            </div>
+        </div>
+    </div><!--Scan Code to Charge end-->
+</div>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            //Title
+            $('#txt_title').on('keyup paste', function () {
+                var title = $(this).val()
+                $('#receiptTitle_p').html(title);
+            });
+            
+            //Transaction Hour
+            $('#radio3').on('click', function () {
+                $('#div_transactionHour').show()
+            });
+
+            $('#radio4').on('click', function () {
+                $('#div_transactionHour').hide()
+            });
+
+            //Project Name
+            $('#radio5').on('click', function () {
+                $('#goodsName_span').html("18年秋季学杂费")
+            });
+
+            $('#radio6').on('click', function () {
+                var name = $('#txt_projectName').val()
+                $('#goodsName_span').html(name)
+            });
+            $('#txt_projectName').on('keyup paste', function () {
+                var title = $(this).val()
+                if($('#radio6').is(':checked')){
+                    $('#goodsName_span').html(title);
+                }
+            });
+            
+            //Payment+Amount Item
+            $('#radio7').on('click', function () {
+                $('#skuName_span').show()
+            });
+
+            $('#radio8').on('click', function () {
+                $('#skuName_span').hide()
+            });
+
+            //Payment Method
+            $('#radio9').on('click', function () {
+                $('#div_paymentMethod').show()
+            });
+
+            $('#radio10').on('click', function () {
+                $('#div_paymentMethod').hide()
+            });
+
+            //User Info for registeration
+            $('#radio11').on('click', function () {
+                $('#saleUserInfo_span').show()
+            });
+            $('#radio12').on('click', function () {
+                $('#saleUserInfo_span').show()
+            });
+            $('#radio13').on('click', function () {
+                $('#saleUserInfo_span').hide()
+            });
+
+            //Remarks
+            $('#radio14').on('click', function () {
+                $('#remarkInfo_span').show()
+            });
+            $('#radio15').on('click', function () {
+                $('#remarkInfo_span').hide()
+            });
+
+            //Manager
+            $('#txt_managerName').on('keyup paste', function () {
+                var title = $(this).val()
+                $('#p_managerName').html(title);
+            });
+
+            //other Description
+            $('#txt_otherDescription').on('keyup paste', function () {
+                var title = $(this).val()
+                $('#orderRemark_span').html(title);
+            });
+
+            //Receipts size
+            $('#radio18').on('click', function () {
+                $('.group_receiptSize_A4').show()
+                $('.group_receiptSize_Style').hide()
+            });
+            $('#radio19').on('click', function () {
+                $('.group_receiptSize_A4').hide()
+                $('.group_receiptSize_Style').show()
+            });
+
+
+
+
+
+            //stapm
+            $('#radio16').on('click', function () {
+                $('#receipt_stamp').show()
+            });
+            $('#radio17').on('click', function () {
+                $('#receipt_stamp').hide()
+            });
+            
+
+
+
+        });
+
+    })(jQuery);
+
+</script>

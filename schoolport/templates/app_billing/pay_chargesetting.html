@@ -1,0 +1,541 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>家校堡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="../assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="../assets/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/vendor/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets/vendor/css/metisMenu.css">
+    <link rel="stylesheet" href="../assets/vendor/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/vendor/css/slicknav.min.css">
+    
+    <link rel="stylesheet" href="../assets/vendor/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/vendor/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="../assets/vendor/swiper/swiper-bundle.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/css/font-awesome.min.css">
+    
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+
+
+
+
+    <!-- Start datatable css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+    
+    <!-- others css -->
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/default-css.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/front_style.css"> -->
+
+    <!-- modernizr css -->
+    <script src="assets/vendor/js/modernizr-2.8.3.min.js"></script>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap-wysihtml5.css">
+    <link rel="stylesheet" href="prettify.css">
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+
+    <div class="pay-main-content">      
+        <!--Scan Code to Charge start-->
+        <div class="content">
+            <div class='title'>
+                Charge settings
+            </div>
+
+            <div class="content_item">
+                <div class="item_title">
+                    1. Is the peak period reminder function enabled?<span class='btn_help'>Annotation</span>
+                </div>
+                <div class="item_content">
+                    <div class="item">
+                        <input type="radio" id="radio1" name="option1" checked>
+                        <label class="control_label" for="radio1">Display</label>
+          
+                        <input type="radio" id="radio2"  name="option1">
+                        <label class="control_label" for="radio2">Hide</label>
+                    </div>
+                </div>
+                <div class="help_dlg">
+                    开启后，当天发布的通知在晚上8点会提醒未处理家长处理。
+
+                    注：被提醒的通知需要满足：
+
+                    （1）收费通知为当天首次下发且下发时间在18:30前；
+
+                    （2）家长当天未收到过催交；
+
+                    (3）仅会提醒未处理通知的家长，已交费或已标记为现金的家长不会被提醒。
+                </div>
+            </div>
+
+
+            <div class="content_item">
+                <div class="item_title">
+                    2. Please set the student’s unique number when [charging by list] (parents will use the "<span class="red_color_text">student’s unique number</span> " to check the student’s fees)
+                </div>
+                <div class="item_content">
+                    <div class="item">
+                        <input type="radio" id="radio3" name="option2" checked>
+                        <label class="control_label" for="radio3">ID card</label>
+          
+                        <input type="radio" id="radio4"  name="option2">
+                        <label class="control_label" for="radio4">8 digits after ID</label>
+
+                        <input type="radio" id="radio5" name="option2" checked>
+                        <label class="control_label" for="radio5">Payment number</label>
+          
+                        <input type="radio" id="radio6"  name="option2">
+                        <label class="control_label" for="radio6">cellphone number</label>
+
+                        <input type="radio" id="radio7" name="option2" checked>
+                        <label class="control_label" for="radio7">Registration number</label>
+          
+                        <input type="radio" id="radio8"  name="option2">
+                        <label class="control_label" for="radio8">School number</label>
+
+                        <input type="radio" id="radio9" name="option2" checked>
+                        <label class="control_label" for="radio9">student ID</label>
+          
+                        <input type="radio" id="radio10"  name="option2">
+                        <label class="control_label" for="radio10">Student mobile phone number</label>
+
+                        <input type="radio" id="radio11"  name="option2">
+                        <label class="control_label" for="radio11">Student ID</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_item">
+                <div class="item_title">
+                    3. Are parents allowed to add and modify child information on their mobile phones?
+                </div>
+                <div class="item_content">
+                    <div class="item">
+                        <input type="radio" id="radio12" name="option3" checked>
+                        <label class="control_label" for="radio12">Allow</label>
+          
+                        <input type="radio" id="radio13"  name="option3">
+                        <label class="control_label" for="radio13">Not Allow</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_item">
+                <div class="item_title">
+                    4. When paying fees, are parents allowed to split the payment amount into multiple payments for payment?
+                </div>
+                <div class="item_content">
+                    <div class="item">
+                        <input type="radio" id="radio14" name="option4" checked>
+                        <label class="control_label" for="radio14">Allow</label>
+          
+                        <input type="radio" id="radio15"  name="option4">
+                        <label class="control_label" for="radio15">Not Allow</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_item">
+                <div class="item_title">
+                    5. The charging authority setting of the teacher with the class <span class="normal">school administrator can view and manage all charging items)</span>
+                </div>
+                <div class="item_content">
+                    <div style="margin-bottom: 20px;">
+                        <input type="radio" id="radio16" name="option5" checked>
+                        <label class="control_label" for="radio16">Class teachers can only view and manage the fee items and payment details <span class="red_color_text">released</span> by <span class="red_color_text">themselves</span></label>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <input type="radio" id="radio17"  name="option5">
+                        <label class="control_label" for="radio17">Class teachers can view and manage the charging items and payment details of <span class="red_color_text">their classes</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="template" style="display: none;">
+                <div class="review_name"></div>
+            </div>
+            <div class="content_item">
+                <div class="item_title">
+                    6. Charge audit settings
+                </div>
+                <div class="item_content">
+                    <table class="layout_table">
+                    
+                        <tr>
+                            <td>Set reviewer</td>
+                            <td>
+                                <div class="item">
+                                    <div class="review_group reviewer">
+                                        <div class="review_name">Kevin</div>
+                                        <div class="review_name">Rothchild</div>
+                                        <div class="review_name">Aladdin</div>
+                                    </div>
+                                    
+                                    <button class="border" data-toggle="modal" data-target="#modal_select_user_one">Click to modify</button>
+                                </div>
+                                <!-- Select User Modal -->
+                                <div class="modal fade" id="modal_select_user_one">
+                                    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px; height: 200px;">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Set reviewer</h5>
+                                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input id="txt_search_reviewer_checkgroup" class="form-control" style="width: 100%; margin-bottom: 20px;" placeholder="Please enter the teacher name">
+                                                
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="check_select_all">
+                                                    <label class="form-check-label" for="check_select_all">Select All</label>
+                                                </div>  
+                                                
+                                                <div class="checkbox_group">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Steven</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Kevin</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Sergiy</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Rothchild</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Jay</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Alex</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Aladdin</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Hook</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Robinhood</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">长老师</label>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="btn_ok" type="button" class="default">Determine</button>
+                                                <button id="btn_cancel"type="button" class="border" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--Select User Modal End-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Set cc</td>
+                            <td>
+                                <div class="item">
+                                    <div class="review_group cc">
+                                        <div class="review_name">Kevin</div>
+                                        <div class="review_name">Rothchild</div>
+                                        <div class="review_name">Aladdin</div>
+                                    </div>
+
+                                    <button class="border" data-toggle="modal" data-target="#modal_select_user_cc">Click to modify</button>
+                                </div>
+
+                                <!-- Select CC Modal -->
+                                <div class="modal fade" id="modal_select_user_cc">
+                                    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px; height: 200px;">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Set CC</h5>
+                                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input id="txt_search_cc_checkgroup" class="form-control" style="width: 100%; margin-bottom: 20px;" placeholder="Please enter the teacher name">
+                                                
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="check_select_all">
+                                                    <label class="form-check-label" for="check_select_all">Select All</label>
+                                                </div>  
+                                                
+                                                <div class="checkbox_group">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Steven</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Kevin</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Sergiy</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Rothchild</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Jay</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Alex</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Aladdin</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Hook</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">Robinhood</label>
+                                                    </div> 
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">长老师</label>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="btn_ok" type="button" class="default">Determine</button>
+                                                <button id="btn_cancel"type="button" class="border" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--Select CC Modal End-->
+
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                        <button class="default">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--Scan Code to Charge end-->
+    </div>
+
+    <!-- jquery latest version -->
+    <script src="../assets/vendor/js/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="../assets/vendor/js/popper.min.js"></script>
+    <script src="../assets/vendor/js/bootstrap.min.js"></script>
+    <script src="../assets/vendor/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/js/owl.carousel.min.js"></script>
+    <script src="../assets/vendor/js/metisMenu.min.js"></script>
+    <script src="../assets/vendor/js/jquery.slimscroll.min.js"></script>
+    <script src="../assets/vendor/js/jquery.slicknav.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="../assets/vendor/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="../assets/vendor/js/pie-chart.js"></script>
+
+
+
+
+
+
+
+    <!-- Start datatable js -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+
+    <!-- others plugins -->
+    <script src="../assets/vendor/js/plugins.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/front_main.js"></script>
+
+
+    <script src="wysihtml5-0.3.0.js"></script>
+    <script src="prettify.js"></script>
+    <script src="bootstrap-wysihtml5.js"></script>
+</body>
+
+
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+        //Reviewer
+            $('#modal_select_user_one').on('shown.bs.modal', function () {
+                $('.review_group.reviewer .review_name').each(function(){
+                    var str_val = $(this).html()
+                    $('#modal_select_user_one .checkbox_group .form-check .form-check-label').filter(function(){return $(this).html()==str_val}).each(function(){
+                        var checkbox = $(this).closest('.form-check').children(".form-check-input[type='checkbox']");
+                        checkbox.prop('checked', true);
+                    });
+                });
+            });
+
+            $('#txt_search_reviewer_checkgroup').on('input', function () {
+                var strSearchval = $(this).val();
+                if(strSearchval == ""){
+                    $('#modal_select_user_one .checkbox_group .form-check').show()
+                }else{
+                    $('#modal_select_user_one .checkbox_group .form-check').hide()
+
+                    $( "#modal_select_user_one .checkbox_group .form-check .form-check-label:contains(" + strSearchval + ")" ).each(function(){
+                        $(this).closest('.form-check').show()
+                    })
+                }
+            })
+
+            $('#modal_select_user_one #check_select_all').on('change', function () {
+                var status = $(this).is(":checked")
+                $('#modal_select_user_one .checkbox_group .form-check .form-check-input').prop('checked', status);
+            });
+
+            $('#modal_select_user_one #btn_ok').on('click', function () {
+                $('.review_group.reviewer .review_name').remove()
+
+                $('#modal_select_user_one .checkbox_group .form-check .form-check-input').each(function(){
+                    if($(this).is(":checked")){
+                        var strName = $(this).closest('.form-check').children('.form-check-label').html();
+                        console.log(strName)
+                        var addItem = $(".template .review_name").clone()
+                        addItem.html(strName)
+
+                        $('.review_group.reviewer').append(addItem)
+                    }
+                })
+                $('#modal_select_user_one #btn_cancel').click();
+            });
+
+    //Reviewer CC
+            $('#modal_select_user_cc').on('shown.bs.modal', function () {
+                $('.review_group.cc .review_name').each(function(){
+                    var str_val = $(this).html()
+                    $('#modal_select_user_cc .checkbox_group .form-check .form-check-label').filter(function(){return $(this).html()==str_val}).each(function(){
+                        var checkbox = $(this).closest('.form-check').children(".form-check-input[type='checkbox']");
+                        checkbox.prop('checked', true);
+                    });
+                });
+            });
+
+            $('#txt_search_cc_checkgroup').on('input', function () {
+                var strSearchval = $(this).val();
+                if(strSearchval == ""){
+                    $('#modal_select_user_cc .checkbox_group .form-check').show()
+                }else{
+                    $('#modal_select_user_cc .checkbox_group .form-check').hide()
+
+                    $( "#modal_select_user_cc .checkbox_group .form-check .form-check-label:contains(" + strSearchval + ")" ).each(function(){
+                        $(this).closest('.form-check').show()
+                    })
+                }
+            })
+
+            $('#modal_select_user_cc #check_select_all').on('change', function () {
+                var status = $(this).is(":checked")
+                $('#modal_select_user_cc .checkbox_group .form-check .form-check-input').prop('checked', status);
+            });
+
+            $('#modal_select_user_cc #btn_ok').on('click', function () {
+                $('.review_group.cc .review_name').remove()
+
+                $('#modal_select_user_cc .checkbox_group .form-check .form-check-input').each(function(){
+                    if($(this).is(":checked")){
+                        var strName = $(this).closest('.form-check').children('.form-check-label').html();
+                        console.log(strName)
+                        var addItem = $(".template .review_name").clone()
+                        addItem.html(strName)
+
+                        $('.review_group.cc').append(addItem)
+                    }
+                })
+                $('#modal_select_user_cc #btn_cancel').click();
+            });
+            
+
+
+
+
+
+
+
+
+            
+
+
+
+        });
+
+    })(jQuery);
+
+</script>
+</html>

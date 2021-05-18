@@ -657,10 +657,182 @@ $(document).ready(function(){
         });
     });
 
-    /* -------------------------------------------- 3. Course 처리부 ------------------------------------------------------------------- */
+    /* -------------------------------------------- 3. Course 처리부 시작------------------------------------------------------------------- */
+    $(document).on('click', '#btn_coursefee_edit_save', function(e){
+        var course_type = $('input:radio[name=nm_radio_coursetype]:checked').val();
+        var course_color = (!$('input:radio[name=nm_class_schedule_color]:checked').val() ? 'None' : $('input:radio[name=nm_class_schedule_color]:checked').val());
+
+        var post_data = {
+            //First Page Values 'Student Information'
+            'course_name' : $('#id_course_title').val(),
+            'type' : 1 , // 1: Normal Course, 2: General Course
+            'course_type' : course_type,
+            'class_schedule_color' : course_color,
+            'price_hour' : $('#id_charging_method_unitprice1').val(),
+            'price_hour_status' : $('input:checkbox[name=nm_billed_hour]').is(':checked'),
+            'price_month' : $('#id_charging_method_unitprice2').val(),
+            'price_month_status' : $('input:checkbox[name=nm_billed_monthly]').is(':checked'),
+            'currency' : 'CNY',
+            'course_status': 1,  //1:Enabled, 0:Disabled
+            'number_of_students' : 0,
+            'pricing_standard_nos' : '',
+            'deduction_rule1' : !$('input:radio[name=nm_deduction_rule1]:checked').val() ? 0 : $('input:radio[name=nm_deduction_rule1]:checked').val(),
+            'deduction_rule2' : !$('input:radio[name=nm_deduction_rule2]:checked').val() ? 0 : $('input:radio[name=nm_deduction_rule2]:checked').val(),
+            'remarks' : $('#id_coursefee_edit_remarks').val(),
+        };
+        
+        $.ajax({
+            url: "add_course", 
+            type: 'post',
+            dataType: 'json',
+            data : JSON.stringify(post_data), 
+            success: function (resp) {
+                location.href = 'coursesfee';        
+            }
+        });
+    });
+
     $(document).on('click', '#btn_coursefee_edit_cancel', function(e){
         e.preventDefault();
         location.href = 'coursesfee';
     });
+
+    //아이템 EditFee Modal 현시하기
+    $(document).on('click', '.tr_courselist .ti-pencil', function(e){
+        var course_id = $(this).closest('tr.tr_courselist').find('input').val();
+    });
+    /* -------------------------------------------- 3. Course 처리부 끝 ------------------------------------------------------------------- */
+
+
+    /* -------------------------------------------- 4. Pay_Charge(ScanCode) 처리부 시작------------------------------------------------------------------- */
+    var gotoPaymentDetail = function(){
+        $("a[href='#tab_paymentdetail']").tab('show');
+    }
+
+    var addItemtoTable = function(table){
+        var tbody = table.children('tbody');
+        var addTr = tbody.children('tr').last();
+        table.children('tbody').append(addTr.clone());
+        addTr = tbody.children('tr').last();
+        addTr.find('input').val("");
+        // addTr.find('select').val("-1")
+    }
+
+    var gotoPaymentDetail = function(){
+        $("a[href='#tab_paymentdetail']").tab('show');
+    }
+
+    $(document).on('click', '#btn_add_chargeQR', function(e){
+        e.preventDefault();
+        location.href = 'scancode/add_chg_qrcode';
+    });
+
+    $(document).on('click', '#btn_consolidated_charging_qrcode', function(e){
+        e.preventDefault();
+        location.href = 'scancode/consolidate';
+    });
+
+    $(document).on('click', '#btn_consolidate_return', function(e){
+        e.preventDefault();
+        window.history.back();
+    });
+    
+    $(document).on('click', '#id_btn_scancode_project_detail', function(e){
+        e.preventDefault();
+        location.href = 'scancode/projectdetail';
+    });
+    $(document).on('click', '#btn_classmanagement_add', function(e){
+        e.preventDefault();
+        location.href = 'classmanagement/add';
+    });
+    $(document).on('click', '#btn_classmanagement_batch_import', function(e){
+        e.preventDefault();
+        location.href = 'classmanagement/import';
+    });
+    $(document).on('click', '#btn_classmanagement_batch_edit', function(e){
+        e.preventDefault();
+        location.href = 'classmanagement/edit';
+    });
+    
+    $(document).on('click', '#id_btn_student_add', function(e){
+        e.preventDefault();
+        location.href = 'studentmanagement/add';
+    });
+    $(document).on('click', '#id_btn_add_faculty', function(e){
+        e.preventDefault();
+        location.href = 'facultymanagement/add';
+    });
+    $(document).on('click', '#id_btn_request_refund_addbatch', function(e){
+        e.preventDefault();
+        location.href = 'payrefundrequest/addBatch';
+    });
+
+    $('#btn_back').on('click', function () {
+        gotoPaymentDetail();
+    });
+    
+    $('#editor_description').wysihtml5({
+        "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+        "emphasis": true, //Italics, bold, etc. Default true
+        "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+        "html": false, //Button which allows you to edit the generated HTML. Default false
+        "link": false, //Button to insert a link. Default true
+        "image": false, //Button to insert an image. Default true,
+        "color": true //Button to change color of font  
+    });
+
+    $('#btn_back').on('click', function () {
+        gotoPaymentDetail();
+    });
+
+    $('#projectName_modal_ok').on('click', function () {
+        var table = $('#table_amout_option')
+
+        $('#modal_projectName_add .normal_table tbody input[type="checkbox"]').each(function(){
+            if($(this).is(':checked')){
+                addItemtoTable(table);
+                var projectName = $(this).closest('tr').children('td').eq(1).html();
+                var lastTr = table.children('tbody').children('tr').last();
+                lastTr.find('input.text_project_name').val(projectName)
+            }
+        });
+
+        $('.closeBtn').click();
+
+    });
+
+    $('#btn_projectName_amount_add').on('click', function () {
+        var table = $('#table_amout_option')
+        addItemtoTable(table);
+    });
+
+    $('#btn_projectName_register_information_add').on('click', function () {
+        var table = $('#table_information_before_reg')
+        addItemtoTable(table);
+    });
+
+    
+
+    $(document).on('click', '.btn_item_remove', function(){
+        var tr = $(this).closest('tr')
+        var tbody = $(this).closest('tbody')
+        var allTr = tbody.children('tr')
+        if(allTr.length > 1){
+            tr.remove()
+        }else{
+            alert("Don't remove")
+        }
+    });
+
+    $(document).on('click', '.btn_item_down', function(){
+        var tr = $(this).closest('tr')
+        tr.insertAfter(tr.next());
+    });
+
+    $(document).on('click', '.btn_item_up', function(){
+        var tr = $(this).closest('tr')
+        tr.insertBefore(tr.prev());
+    });
+
 });
 

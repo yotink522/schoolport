@@ -1,0 +1,157 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content">      
+    <!--Scan Code to Charge start-->
+    <div class="content">
+        <div class='title'>
+            Add a merged QR code
+        </div>
+        <div class = "table">
+            <table class="layout_table">
+                <tr>
+                    <td>Project name</td>
+                    <td>Dianshi International Education Center</td>
+                </tr>
+                <tr>
+                    <td>Payment amount setting</td>
+                    <td>Fill in the amount by the payer</td>
+                </tr>
+                <tr>
+                    <td>Amount selection method</td>
+                    <td>Custom fill</td>
+                </tr>
+                <tr>
+                    <td>status</td>
+                    <td>In effect</td>
+                </tr>
+                <tr>
+                    <td>QR code effective time</td>
+                    <td>
+                        <div class="item">
+                            <input class="form-control" type="date" readonly>
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date" readonly>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Charge account</td>
+                    <td>
+                        <label>WeChat receiving account: WeChat Receiving Wallet</label>
+                        <label>Alipay receiving account: Yuan Changsong-China Construction Bank (1630)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Information to be registered before payment</td>
+                    <td>
+                        <label>User input: Child's name</label>
+                        <label>User input: cellphone number</label>
+                        <label>Payment itemsThe user chooses options: early education, admission, nursery fees, meals, bedding, deposit, insurance, Lego, eloquence, art supplies, basketball, logical thinking, and others Payment items</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Project fee description</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Picture file</td>
+                    <td><img src="{% static 'assets/img/qrcode.jpeg' %}"></td>
+                </tr>
+                <tr>
+                    <td>publisher</td>
+                    <td>Song Zhaopeng</td>
+                </tr>
+            </table>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                <button class="border">Return</button>
+            </div>
+        </div>
+    </div><!--Scan Code to Charge end-->
+</div>
+
+<script>
+    (function($) {
+        var gotoPaymentDetail = function(){
+            $("a[href='#tab_paymentdetail']").tab('show');
+        }
+
+        var addItemtoTable = function(table){
+            var tbody = table.children('tbody');
+            var addTr = tbody.children('tr').last();
+            table.children('tbody').append(addTr.clone());
+            addTr = tbody.children('tr').last();
+            addTr.find('input').val("");
+            // addTr.find('select').val("-1")
+        }
+
+        $(document).ready(function() {
+            $('#editor_description').wysihtml5({
+                "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+                "emphasis": true, //Italics, bold, etc. Default true
+                "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+                "html": false, //Button which allows you to edit the generated HTML. Default false
+                "link": false, //Button to insert a link. Default true
+                "image": false, //Button to insert an image. Default true,
+                "color": true //Button to change color of font  
+            });
+
+            $('#btn_back').on('click', function () {
+                gotoPaymentDetail();
+            });
+
+            $('#projectName_modal_ok').on('click', function () {
+                var table = $('#table_amout_option')
+
+                $('#modal_projectName_add .normal_table tbody input[type="checkbox"]').each(function(){
+                    if($(this).is(':checked')){
+                        addItemtoTable(table);
+                        var projectName = $(this).closest('tr').children('td').eq(1).html();
+                        var lastTr = table.children('tbody').children('tr').last();
+                        lastTr.find('input.text_project_name').val(projectName)
+                    }
+                });
+
+                $('.closeBtn').click();
+
+            });
+
+            $('#btn_projectName_amount_add').on('click', function () {
+                var table = $('#table_amout_option')
+                addItemtoTable(table);
+            });
+
+            $('#btn_projectName_register_information_add').on('click', function () {
+                var table = $('#table_information_before_reg')
+                addItemtoTable(table);
+            });
+
+            
+
+            $(document).on('click', '.btn_item_remove', function(){
+                var tr = $(this).closest('tr')
+                var tbody = $(this).closest('tbody')
+                var allTr = tbody.children('tr')
+                if(allTr.length > 1){
+                    tr.remove()
+                }else{
+                    alert("Don't remove")
+                }
+            });
+
+            $(document).on('click', '.btn_item_down', function(){
+                var tr = $(this).closest('tr')
+                tr.insertAfter(tr.next());
+            });
+
+            $(document).on('click', '.btn_item_up', function(){
+                var tr = $(this).closest('tr')
+                tr.insertBefore(tr.prev());
+            });
+        });
+
+    })(jQuery);
+
+</script>
+

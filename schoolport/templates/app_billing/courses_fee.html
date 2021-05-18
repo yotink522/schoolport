@@ -79,6 +79,24 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            {% for course in course_list %}
+                                                <tr class="tr_courselist">
+                                                    <input type="hidden" value='{{course.id}}' />
+                                                    <td>{{course.course_name}}</td>
+                                                    <td>{{course.course_type}}</td>
+                                                    <td>{{course.price_hour}} CNY/hour</td>
+                                                    <td>-</td>
+                                                    <td>{{course.number_of_students}}</td>
+                                                    <td>Turned Off</td>
+                                                    <td>{% if course.course_status == 1 %}On{%else%}Off{%endif%}</td>
+                                                    <td>
+                                                        <i class="ti-clipboard"></i>
+                                                        <i class="ti-pencil"></i>
+                                                        <i class="ti-trash"></i>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                                <!--
                                                 <tr>
                                                     <th scope="row">Special Course-Basket ball</th>
                                                     <td>One to Many</td>
@@ -119,6 +137,7 @@
                                                     <td>On</td>
                                                     <td><i class="ti-trash"></i></td>
                                                 </tr>
+                                                -->
                                             </tbody>
                                         </table>
                                     </div>

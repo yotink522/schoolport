@@ -1,0 +1,546 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content">      
+    <ul class="nav nav-tabs mb-3" id="mainTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="btn_scancode" data-toggle="pill" href="#tab_scancode" role="tab" aria-controls="tab_scancode" aria-selected="true">Scan Code</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_paymentDetail" data-toggle="pill" href="#tab_paymentdetail" role="tab" aria-controls="tab_paymentdetail" aria-selected="false">Payment Detail</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab3" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Toll Recyle</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="btn_tab4" data-toggle="pill" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Merge QR</a>
+        </li>
+    </ul>
+    <!--Download pan start-->
+    <div class="download_pan">
+        <a class="fr f-height44 link-2 mr20" href="#" target="_blank"><i class="fa fa-download"></i>Guidelines for Scan Code Charges</a>
+        <a class="fr f-height44 link-2 mr20" href="#" target="_blank"><i class="fa fa-play-circle-o"></i>View operation video</a>
+    </div><!--Download pan end-->
+
+    <div class="tab-content" id="mainTabContent">
+        <div class="tab-pane fade show active" id="tab_scancode" role="tabpanel" aria-labelledby="btn_tab1">
+            <!--Scan Code to Charge start-->
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label>Project Name</label>
+                            <input maxlength="40" class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                        </div>
+                        <div class="item">
+                            <label>Release date</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+                        <div class="item">
+                            <label>Status</label>
+                            <select name="valid" class = "form-control" value="">
+                                <option value="">--Please select--</option>
+                                <option value="0">To be effective</option>
+                                <option value="1">In effect</option>
+                                <option value="2">Has ended</option>
+                                <option value="3">Draft</option>
+                            </select>
+                        </div>
+                        <div class="item">
+                            <input type="submit" value="Inquire">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button id="btn_add_chargeQR" class="default">Add a Chargeable QR Code</button>
+                    <button id="btn_consolidated_charging_qrcode" class="default">Consolidated charging QR Code</button>
+                </div>
+        
+                <div class="btn-group">
+                    <button id="btn_back" class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable1" class="text-center no_sort">
+                    <thead class="">
+                        <tr role="row">
+                            <th>Project Name</th>
+                            <th>Start date</th>
+                            <th>Deadline</th>
+                            <th>Status</th>
+                            <th>Number of people handed in</th>
+                            <th>QR code</th>
+                            <th>Operating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dianshi International Education Center</td>
+                            <td>2019-08-01 11:00:00</td>
+                            <td>2021-12-31 23:59:59	</td>
+                            <td>In effect</td>
+                            <td><a href="#">903</a></td>
+                            <td><a href="#" data-toggle="modal" data-target="#modal_qrcode"><i class='fa fa-qrcode' style="margin-right: 5px;"></i>Download the QR code</a></td>
+                            <td>
+                                <input type="button" id="id_btn_scancode_project_detail" value="Project Detail">
+                                <input type="button" value="Payment Detail">
+                                <input type="button" value="Modification">
+                                <select>
+                                    <option value="">More</option>
+                                    <option value="45">Cut off</option>
+                                    <option value="sc">Delete</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!--Scan Code to Charge end-->
+        </div>
+        <div class="tab-pane fade" id="tab_paymentdetail" role="tabpanel" aria-labelledby="btn_tab2">
+            <!--Payment Details start-->
+            <div class="header">
+                <form method="get" action="" onsubmit="">
+                    <div class="form-group">
+                        <div class="item">
+                            <label>Payment time</label>	
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+                        
+                        <div class="item">
+                            <label>Payment Method</label>
+                            <select name="valid" class = "form-control" value="">
+                                <option value="">--Please select--</option>
+                                <option value="0">Wechat Pay</option>
+                                <option value="1">Pay with Ali-Pay</option>
+                                <option value="2">Cash payment</option>
+                                <option value="3">Bank Transfer</option>
+                                <option value="4">POS swipe</option>
+                                <option value="5">Other Method</option>
+                            </select>
+                        </div>
+
+                        <div class="item">
+                            <label>Payment Status</label>
+                            <select name="valid" class = "form-control" value="">
+                                <option value="0">All</option>
+                                <option value="1">Paid</option>
+                                <option value="2">Fully refunded</option>
+                            </select>
+                        </div>
+
+                        <div class="item">
+                            <label>Project Name</label>
+                            <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the keyword for query">
+                        </div>
+
+                        <div class="item">
+                            <label>Class</label>
+                            <input class="form-control" id="s_name" name="name" type="text" placeholder="">
+                        </div>
+
+                        <div class="item">
+                            <label>Student name</label>
+                            <input class="form-control" id="s_name" name="name" type="text" placeholder="">
+                        </div>
+
+                        <div class="item">
+                            <label>User registeration information</label>
+                            <select name="valid" class = "form-control" value="">
+                                <option value="0">Please choose</option>
+                            </select>
+                        </div>
+
+                        <div class="item">
+                            <label>Receipt issuance</label>
+                            <select name="valid" class = "form-control" value="">
+                                <option value="0">Please choose</option>
+                            </select>
+                        </div>
+
+                        <div class="item">
+                            <label>Issue of receipts</label>
+                            <input type="number" class="form-control" value="0" min="0" max="10" step="1"/>
+                        </div>
+
+                        <div class="item">
+                            <input type="submit" value="Inquire">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="btn-group">
+                    <button class="default">Export EXCEL</button>
+                    <button class="default">Export EXCEL(listed for registration information)</button>
+                    <button class="default">Export receipt</button>
+                    <button class="default">Receipt style settings</button>
+                    <button class="default" data-toggle="modal" data-target="#modal_projectName">On-site fee registeration</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal_projectName">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Choose a charge item</h5>
+                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="item">
+                                        <input class="form-control" style="width: 418px;" type="text" placeholder="Please enter a keyword query">
+                                        <button class="default" style="margin-left: 20px;">Inquire</button>
+                                    </div>
+                                
+                                    <table class="normal_table" style="width: 100%; margin-top: 20px;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th style="width: 30px;"></th>
+                                                <th>Project Name</th>
+                                                <th>Start date</th>
+                                                <th>Deadline</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 30px; padding: 0px; text-align: center; vertical-align: middle;">      
+                                                    <input class="normal_check" type="checkbox">
+                                                </td>
+                                                <td>Dianshi International Education Center</td>
+                                                <td>2019-08-01 11:00:00</td>
+                                                <td>2021-12-31 23:59:59	</td>
+                                                <td>In effect</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="projectName_modal_ok" type="button" class="default">Determine</button>
+                                    <button type="button" class="border closeBtn" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--Modal End-->
+                </div>
+        
+                <div class="btn-group">
+                    <button class="border">Return</button>
+                    <button class="border">Home</button>
+                </div>
+
+            </div>
+        
+            <div class="table">
+                <table id="dataTable2" class="text-center no_sort">
+                    <thead class="">
+                        <tr>
+                            <th colspan="12">
+                                <div class="total">
+                                    收款总额:<span style="color: red;">25336.00</span>元，共<span style="color: red;">24</span>笔<span style="color: gray;">（微信支付：22936.00元；支付宝支付：2400.00元；）</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr role="row">
+                            <th>Project Completion time</th>
+                            <th>Project name</th>
+                            <th>Class</th>
+                            <th>Student name</th>
+                            <th>Payment items</th>
+                            <th>Payment Amount(yuan)</th>
+                            <th>Payment Status</th>
+                            <th>Payment Method</th>
+                            <th>User registration information</th>
+                            <th>Remarks</th>
+                            <th>Receipt issuance</th>
+                            <th>Operating</th>
+                        </tr>
+                        <tr>
+                            <th width="10%">支付完成时间</th>
+                            <th width="15%">项目名称</th>
+                            <th width="15%">班级</th>
+                            <th width="15%">学生姓名</th>
+                            <th width="12%">交费项</th>
+                            <th width="10%">交费金额(元)</th>
+                            <th width="8%">交费状态</th>
+                            <th width="8%">支付方式</th>
+                            <th width="25%">用户登记信息</th>
+                            <th width="25%">备注</th>
+                            <th width="5%">收据发放</th>
+                            <th width="10%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <td>2021-05-13 10:06:43</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>李雨霏</td>
+                            <td>点石国际教育中心</td>
+                            <td>2084.00</td>
+                            <td><em style="color: green;">已交款</em></td>
+                            <td>微信支付</td>
+                            <td>李雨霏;18604153595;入园</td>        
+                            <td></td>
+                            <td>0</td>
+                            <td>            
+                                <input type="button" value="view">
+                                <input type="button" value="refund">
+                                <input type="button" value="receipt">
+                                <input type="button" value="notes">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2021-05-13 10:06:43</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>李雨霏</td>
+                            <td>点石国际教育中心</td>
+                            <td>2084.00</td>
+                            <td><em style="color: green;">已交款</em></td>
+                            <td>微信支付</td>
+                            <td>李雨霏;18604153595;入园</td>        
+                            <td></td>
+                            <td>0</td>
+                            <td>            
+                                <input type="button" value="view">
+                                <input type="button" value="refund">
+                                <input type="button" value="receipt">
+                                <input type="button" value="notes">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2021-05-13 10:06:43</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>李雨霏</td>
+                            <td>点石国际教育中心</td>
+                            <td>2084.00</td>
+                            <td><em style="color: green;">已交款</em></td>
+                            <td>微信支付</td>
+                            <td>李雨霏;18604153595;入园</td>        
+                            <td></td>
+                            <td>0</td>
+                            <td>            
+                                <input type="button" value="view">
+                                <input type="button" value="refund">
+                                <input type="button" value="receipt">
+                                <input type="button" value="notes">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2021-05-13 10:06:43</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>李雨霏</td>
+                            <td>点石国际教育中心</td>
+                            <td>2084.00</td>
+                            <td><em style="color: green;">已交款</em></td>
+                            <td>微信支付</td>
+                            <td>李雨霏;18604153595;入园</td>        
+                            <td></td>
+                            <td>0</td>
+                            <td>            
+                                <input type="button" value="view">
+                                <input type="button" value="refund">
+                                <input type="button" value="receipt">
+                                <input type="button" value="notes">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2021-05-13 10:06:43</td>
+                            <td>点石国际教育中心</td>
+                            <td>无</td>
+                            <td>李雨霏</td>
+                            <td>点石国际教育中心</td>
+                            <td>2084.00</td>
+                            <td><em style="color: green;">已交款</em></td>
+                            <td>微信支付</td>
+                            <td>李雨霏;18604153595;入园</td>        
+                            <td></td>
+                            <td>0</td>
+                            <td>            
+                                <input type="button" value="view">
+                                <input type="button" value="refund">
+                                <input type="button" value="receipt">
+                                <input type="button" value="notes">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!--Payment Details end-->
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="btn_tab3">
+            <div class="row">
+                <!--Toll Recyle Bin start-->
+                <div class="header">
+                    <form method="get" action="" onsubmit="">
+                        <div class="form-group">
+                            <div class="item">
+                                <label>Project Name</label>
+                                <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the keyword for query">
+                            </div>
+
+                            <div class="item">
+                                <label>Release time</label>	
+                                <input class="form-control" type="date">
+                                <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                                <input class="form-control" type="date">
+                            </div>
+                            
+                            <div class="item">
+                                <label>Payment Status</label>
+                                <select name="valid" class = "form-control" value="">
+                                    <option value="0">Please choose</option>
+                                    <option value="1">To be effective</option>
+                                    <option value="2">In effect</option>
+                                    <option value="3">Has ended</option>
+                                    <option value="4">draft</option>
+                                </select>
+                            </div>
+
+                            <div class="item">
+                                <input type="submit" value="Inquire">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div style=" width: 100%; display: flex; justify-content: flex-end;">
+                    <div class="btn-group">
+                        <button class="border">Return</button>
+                        <button class="border">Home</button>
+                    </div>
+    
+                </div>
+
+                <div class="table">
+                    <table id="dataTable3" class="text-center no_sort">
+                        <thead class="">
+                            <tr role="row">
+                                <th>Project name</th>
+                                <th>Start date</th>
+                                <th>Deadline</th>
+                                <th>Status</th>
+                                <th>Number of People handed in</th>
+                                <th>Operating</th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <tr>
+                                <td>点石国际教育中心</td>
+                                <td>2021-05-13 10:06:43</td>
+                                <td>2021-05-14 10:06:43</td>
+                                <td>Has ended</td>
+                                <td>1</td>
+                                <td>            
+                                    <input type="button" value="complete">
+                                    <input type="button" value="restore">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!--Toll Recyle Bin end-->
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="btn_tab4">
+            <div class="row">
+                <!--Merge QR Code start-->
+                <div class="header">
+                    <form method="get" action="" onsubmit="">
+                        <div class="form-group">
+                            <div class="item">
+                                <label>Project Name</label>
+                                <input maxlength="40" class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                            </div>
+                            <div class="item">
+                                <label>Release date</label>	
+                                <input class="form-control" type="date">
+                                <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                                <input class="form-control" type="date">
+                            </div>
+                            <div class="item">
+                                <input type="submit" value="Inquire">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div style="width: 100%; display: flex; justify-content: space-between;">
+                    <div class="btn-group">
+                        <button class="default">Add a merged QR Code</button>
+                    </div>
+            
+                    <div class="btn-group">
+                        <button id="btn_back" class="border">Return</button>
+                        <button class="border">Home</button>
+                    </div>
+    
+                </div>
+            
+                <div class="table">
+                    <table id="dataTable4" class="text-center no_sort">
+                        <thead class="">
+                            <tr role="row">
+                                <th>Project Name</th>
+                                <th>Creattion date</th>
+                                <th>QR code</th>
+                                <th>Operating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div><!--Merge QR Code end-->
+            </div>
+        </div>
+    </div>
+
+    <!-- QR code Modal -->
+    <div class="modal fade" id="modal_qrcode">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="padding: 30px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4" style="border-right: 1px solid #ccc; padding: 30px;">
+                            <img src="{% static 'assets/img/qrcode-logo.png' %}" style="width: 100%; margin-bottom: 20px">
+                            <img src="{% static 'assets/img/qrcode.jpeg' %}" style="width: 100%; margin-bottom: 30px">
+                            <button class="border" style="width: 100%; margin: 0px;">上传LOGO</button> 
+                        </div>
+
+                        <div class="col-sm-8" style="display: grid;">
+                            <p style="margin-top: 30px">链接：</p>
+                            <div class="item" style="margin-top: 20px; justify-content: space-between;">
+                                <input class="form-control" type="text" value="" readonly="readonly" style="width: 100%;">
+                                <a id="copy_url" href="#" style="width: 65px; margin-left: 30px;">复制链接</a>
+                            </div>
+                            <p style="margin-top: 30px;">下载：</p>
+                            <div class="border-div">
+                                <img src="{% static 'assets/img/qrcode-3.jpeg' %}">
+                                <p>仅下载二维码</p>
+                                <button class="default">下载</button>
+                            </div>
+                            <div class="border-div">
+                                <img id="signTitleImage" src="{% static 'assets/img/qrcode-6.jpeg' %}">
+                                <p>立牌样式二维码</p>
+                                <button class="default">下载</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--QR code Modal End-->
+</div>
+

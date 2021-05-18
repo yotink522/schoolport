@@ -16,32 +16,32 @@
                         <div class="col-1"></div>
                         <label class="col-form-label col-1">Course Type:</label>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio4">One to many</label>
+                            <input type="radio" checked="" id="id_radio_coursetype_onetomany" name="nm_radio_coursetype" class="custom-control-input" value='One to many'>
+                            <label class="custom-control-label" for="id_radio_coursetype_onetomany">One to many</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio5">One to one</label>
+                            <input type="radio" id="id_radio_coursetype_onetoone" name="nm_radio_coursetype" class="custom-control-input" value='One to one'>
+                            <label class="custom-control-label" for="id_radio_coursetype_onetoone">One to one</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-1"></div>
                         <label class="col-form-label col-1">Class schedule Color</label>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio4"></label>
+                            <input type="radio" id="id_radio_class_schedule_color1" name="nm_class_schedule_color" class="custom-control-input" value="Blue">
+                            <label class="custom-control-label" for="id_radio_class_schedule_color1" style="color:blue;" >Blue</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio5"></label>
+                            <input type="radio" id="id_radio_class_schedule_color2" name="nm_class_schedule_color" class="custom-control-input" value="Red">
+                            <label class="custom-control-label" for="id_radio_class_schedule_color2" style="color:red;">Red</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio4"></label>
+                            <input type="radio" id="id_radio_class_schedule_color3" name="nm_class_schedule_color" class="custom-control-input" value="Green">
+                            <label class="custom-control-label" for="id_radio_class_schedule_color3" style="color:green;">Green</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio5"></label>
+                            <input type="radio" id="id_radio_class_schedule_color4" name="nm_class_schedule_color" class="custom-control-input" value="Pink">
+                            <label class="custom-control-label" for="id_radio_class_schedule_color4" style="color:pink;">Pink</label>
                         </div>
                     </div>
                 </div>
@@ -53,14 +53,14 @@
                     <div class="form-group row">
                         <div class="col-1"></div>
                         <div class="custom-control custom-checkbox col-2">
-                            <input type="checkbox" checked="" class="custom-control-input" id="id_article_is_availability" wtx-context="624CD9AA-F5BC-45AE-82A9-580EA59C48D5">
-                            <label class="custom-control-label" for="id_article_is_availability">Charged by class hour</label>
+                            <input type="checkbox" checked="" class="custom-control-input" id="id_checkbox_charged_by_class_hour" name="nm_billed_hour" wtx-context="624CD9AA-F5BC-45AE-82A9-580EA59C48D5">
+                            <label class="custom-control-label" for="id_checkbox_charged_by_class_hour">Charged by class hour</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-2"></div>
                         <label class="col-form-label col-1">Unit Price</label>
-                        <input class="form-control form-control-sm col-2" type="text" id="id_course_title" placeholder="">
+                        <input class="form-control form-control-sm col-2" type="text" id="id_charging_method_unitprice1" placeholder="">
                         <label class="col-form-label col-1">Yuan/hour</label>
                     </div>
                     <div class="form-group row">
@@ -95,14 +95,14 @@
                     <div class="form-group row">
                         <div class="col-1"></div>
                         <div class="custom-control custom-checkbox col-2">
-                            <input type="checkbox" checked="" class="custom-control-input" id="id_article_is_availability" wtx-context="624CD9AA-F5BC-45AE-82A9-580EA59C48D5">
-                            <label class="custom-control-label" for="id_article_is_availability">Billed Monthly</label>
+                            <input type="checkbox" checked="" class="custom-control-input" id="id_checkbox_charged_by_class_monthly" name="nm_billed_monthly" wtx-context="624CD9AA-F5BC-45AE-82A9-580EA59C48D5">
+                            <label class="custom-control-label" for="id_checkbox_charged_by_class_monthly">Billed Monthly</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-2"></div>
                         <label class="col-form-label col-1">Unit Price</label>
-                        <input class="form-control form-control-sm col-2" type="text" id="id_course_title" placeholder="">
+                        <input class="form-control form-control-sm col-2" type="text" id="id_charging_method_unitprice2" placeholder="">
                         <label class="col-form-label col-1">Yuan/month</label>
                     </div>
                     <div class="form-group row">
@@ -144,24 +144,24 @@
                         <div class="col-1"></div>
                         <label for="id_course_title" class="col-form-label col-4">Deduction rules: Whether to deduct class hours when asking for leave</label>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio4">buckle</label>
+                            <input type="radio" id="id_deduction_rule_buckle1" name="nm_deduction_rule1" class="custom-control-input" value=1>
+                            <label class="custom-control-label" for="id_deduction_rule_buckle1">buckle</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio5">No deduction</label>
+                            <input type="radio" id="id_deduction_rule_nodeduction1" name="nm_deduction_rule1" class="custom-control-input" value=2>
+                            <label class="custom-control-label" for="id_deduction_rule_nodeduction1">No deduction</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-1"></div>
                         <label for="id_course_title" class="col-form-label col-4">Whether to deduct class hours before arrival</label>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" checked="" id="customRadio4" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio4">buckle</label>
+                            <input type="radio" id="id_deduction_rule_buckle2" name="nm_deduction_rule2" class="custom-control-input" value=1>
+                            <label class="custom-control-label" for="id_deduction_rule_buckle2">buckle</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio5">No deduction</label>
+                            <input type="radio" id="id_deduction_rule_nodeduction2" name="nm_deduction_rule2" class="custom-control-input" value=2>
+                            <label class="custom-control-label" for="id_deduction_rule_nodeduction2">No deduction</label>
                         </div>
                     </div>
 
@@ -174,12 +174,12 @@
                     <div class="form-group row">
                         <div class="col-1"></div>
                         <label class="col-form-label col-2">Remarks:</label>
-                        <input class="form-control form-control-sm col-4" type="text" id="id_course_title" placeholder="">
+                        <input class="form-control form-control-sm col-4" type="text" id="id_coursefee_edit_remarks" placeholder="">
                     </div>
 
                     <div class="form-group row">
                         <div class="col-3"></div>
-                        <button type="submit" class="btn btn-success mt-4 pr-4 pl-4 mr-3 col-1">Save</button>
+                        <button type="submit" class="btn btn-success mt-4 pr-4 pl-4 mr-3 col-1" id="btn_coursefee_edit_save">Save</button>
                         <button type="submit" class="btn btn-secondary mt-4 pr-4 pl-4 col-1" id="btn_coursefee_edit_cancel">Cancel</button>
                         <div class="col-3"></div>
                     </div>

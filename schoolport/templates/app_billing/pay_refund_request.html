@@ -1,0 +1,432 @@
+{% load i18n %}
+{% load static %}
+<div class="pay-main-content" style="padding: 20px;">      
+    <!--Review start-->
+    <div class='title'>
+        Request a refund
+    </div>
+    <div class='alert'>
+        Applicable to scenarios such as wrong payment and balance refund. Partial and full refunds are supported. Multiple items and multiple persons can be refunded at the same time. The <span class="red_color_text"> refund will be [returned in the same way] to the account paid by the parent</span>
+    </div>
+    <!--Download pan start-->
+    <div class="download_pan">
+        <a class="fr f-height44 link-2 mr20" href="#" target="_blank"><i class="fa fa-download"></i>Refund Application and Inquiry Operation Guide</a>
+    </div><!--Download pan end-->
+    <div class="header">
+        <form method="get" action="" onsubmit="">
+            <div class="form-group">
+                <div class="item">
+                    <label>Transcaction Hour</label>	
+                    <input class="form-control" type="date">
+                    <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                    <input class="form-control" type="date">
+                </div>
+                
+                <div class="item">
+                    <label>Payment Item</label>
+                    <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                </div>
+                
+                <div class="item">
+                    <label>Status</label>
+                    <select name="valid" class = "form-control" value="">
+                        <option value="">All</option>
+                        <option value="0">Paid</option>
+                        <option value="1">Fully refunded</option>
+                        <option value="2">Partial refunded</option>
+                    </select>
+                </div>
+
+                <div class="item">
+                    <label>Transcaction Order number</label>
+                    <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                </div>
+
+                <div class="item">
+                    <label>Class</label>
+                    <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                </div>
+
+                <div class="item">
+                    <label>Student name</label>
+                    <input class="form-control" id="s_name" name="name" type="text" placeholder="Please enter the project name">
+                </div>
+
+
+                <div class="item">
+                    <input type="submit" value="Inquire">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+        <div class="btn-group">
+            <button class="default" id="id_btn_request_refund_addbatch">Request a batch</button>
+        </div>
+
+        <div class="btn-group">
+            <button id="btn_back" class="border">Return</button>
+            <button class="border">Home</button>
+        </div>
+
+    </div>
+
+    <div class="table">
+        <table id="dataTable1" class="no_sort">
+            <thead class="">
+                <tr role="row">
+                    <th>Payment completion time</th>
+                    <th>Transaction order number</th>
+                    <th>Payment items</th>
+                    <th>class</th>
+                    <th>student name</th>
+                    <th>Payment items (yuan)</th>
+                    <th>Order amount (yuan)</th>
+                    <th>payment method</th>
+                    <th>Order Status</th>
+                    <th>operating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-13 10:06:43</td>
+                    <td>577436449222000640</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>李雨霏</td>
+                    <td>自定义金额收费  2084</td>
+                    <td>2084.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-12 11:00:36</td>
+                    <td>577087683977650176</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>杨贺迪</td>
+                    <td>自定义金额收费  800</td>
+                    <td>800.00</td>
+                    <td>支付宝支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2021-05-11 13:49:08</td>
+                    <td>576767652605448192</td>
+                    <td>点石国际教育中心</td>
+                    <td>无</td>
+                    <td>张赫庭</td>
+                    <td>自定义金额收费  1000</td>
+                    <td>1000.00</td>
+                    <td>微信支付</td>
+                    <td>已支付</td>
+                    <td>
+                        <input type="button" value="Request a refund">
+                    </td>
+                </tr>
+        </tbody>
+        </table>
+    </div><!--Review end-->
+</div>
+    
+

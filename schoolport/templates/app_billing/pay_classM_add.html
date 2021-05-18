@@ -1,0 +1,55 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content">      
+    <!--Scan Code to Charge start-->
+    <div class="content">
+        <div class='title'>
+            New class
+        </div>
+        <div class = "table">
+            <table class="layout_table autowidth">
+                <tr>
+                    <td><span class="red_color_text">*</span>Grade</td>
+                    <td>
+                        <select class="form-control">
+                            <option value = "-1">Please choose</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><span class="red_color_text">*</span>Class number</td>
+                    <td>
+                        <input class="form-control" placeholder="Please enter the number">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><span class="red_color_text">*</span>Class name</td>
+                    <td>
+                        <div class="item">
+                            <input class="form-control" readonly>
+                            <label style="margin-left: 10px;">(Class names are automatically generated, and class names can be modified for custom grades)</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Class name</td>
+                    <td>
+                        <input class="form-control" placeholder="optional">
+                    </td>
+                </tr>
+            </table>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                <button class="default">Save</button>
+                <button class="default">Refresh</button>
+                <button class="border">Return</button>
+            </div>
+        </div>
+    </div><!--Scan Code to Charge end-->
+</div>

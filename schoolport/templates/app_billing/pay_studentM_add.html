@@ -1,0 +1,137 @@
+{% load i18n %}
+{% load static %}
+    <div class="pay-main-content">      
+        <!--Scan Code to Charge start-->
+        <div class="content">
+            <div class='title'>
+                Add students
+            </div>
+
+            <div class="sub_title_layout">
+                Student Information Management
+            </div>
+
+            <table class="control_table" style="margin-left: 10px;">
+                <tr>
+                    <td style="width: 200px;">
+                        <label><span class="require_symbol">*</span>student name</label>
+                    </td>
+                    <td>
+                        <input class="form-control" type="text" placeholder="Enter the name">
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <label>Student gender</label>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option value = "-1">Please choose</option>
+                            <option value = "1">Male</option>
+                            <option value = "2">Female</option>
+                        </select>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <label><span class="require_symbol">*</span>Grade</label>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option value = "-1">Please choose</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><span class="require_symbol">*</span>Class</label>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option value = "-1">Please choose</option>
+                            <option value = "1">C1</option>
+                            <option value = "2">C2</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="sub_title_layout">
+                Parent Information Management
+            </div>
+
+            <table id="table_information_parent" class="control_table" style="width: auto!important; margin-left: 20px;">
+                <tr>
+                    <td>
+                        <label>Parent Information</label>
+                    </td>
+                    <td>
+                        <div class="item">
+                            <label>Name:</label>
+                            <input class="form-control" type="text" placeholder="Enter the entry">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="item">
+                            <label>Moblie Name:</label>
+                            <input class="form-control" type="text" placeholder="Enter the entry">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="item">
+                            <button class="border btn_item_remove"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                <button id="btn_add_parent" class="default">Add Parent</button>
+                <button class="default">Save</button>
+                <button id="btn_refresh" class="default">Refresh</button>
+                <button class="border">Cancel</button>
+            </div>
+        </div><!--Scan Code to Charge end-->
+    </div>
+
+<script>
+    (function($) {
+        var addItemtoTable = function(table){
+            var tbody = table.children('tbody');
+            var addTr = tbody.children('tr').last();
+            table.children('tbody').append(addTr.clone());
+            addTr = tbody.children('tr').last();
+            addTr.find('input').val("");
+        }
+
+        $(document).ready(function() {
+            $('#btn_refresh').on('click', function () {
+                $('input').val("")
+                $('select').val("-1")
+            });
+
+            $('#btn_add_parent').on('click', function () {
+                var table = $('#table_information_parent')
+                addItemtoTable(table);
+            });
+
+            $(document).on('click', '.btn_item_remove', function(){
+                var tr = $(this).closest('tr')
+                var tbody = $(this).closest('tbody')
+                var allTr = tbody.children('tr')
+                if(allTr.length > 1){
+                    tr.remove()
+                }else{
+                    alert("Don't remove")
+                }
+            });
+        });
+
+    })(jQuery);
+
+</script>
+

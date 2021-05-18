@@ -1,0 +1,106 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content">      
+    <div class="content">
+        <div class='title'>
+            Add a chargeable QR code
+        </div>
+        <div class='alert'>
+            Combining charging QR codes means combining multiple QR code charging items to gernerate a single QR code. Users can scan one QR code to view multiple charging items and select the corresponding items to pay according to their needs. <span style="color: red">(No more than 30 items at most)</span>
+        </div>
+        <div class = "table">
+            <table class="layout_table">
+                <tr>
+                    <td><span class='require_symbol'>*</span>Project name</td>
+                    <td>
+                        <div class="item">
+                            <input class="form-control" style="width: 218px;" type="text" placeholder="Please enter the project name">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class='require_symbol'>*</span>Combined project selection</td>
+                    <td>
+                        <button class="default" style="margin-left: 20px;" data-toggle="modal" data-target="#modal_projectName_add">+ Select the charge item</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal_projectName_add">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Choose a charge item</h5>
+                                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="item">
+                                            <input class="form-control" style="width: 418px;" type="text" placeholder="Please enter a keyword query">
+                                            <button class="default" style="margin-left: 20px;">Inquire</button>
+                                        </div>
+                                    
+                                        <table class="normal_table" style="width: 100%; margin-top: 20px;">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th style="width: 30px;"></th>
+                                                    <th>Project Name</th>
+                                                    <th>Start date</th>
+                                                    <th>Deadline</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 30px; padding: 0px; text-align: center; vertical-align: middle;">      
+                                                        <input class="normal_check" type="checkbox">
+                                                    </td>
+                                                    <td>Dianshi International Education Center</td>
+                                                    <td>2019-08-01 11:00:00</td>
+                                                    <td>2021-12-31 23:59:59	</td>
+                                                    <td>In effect</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="projectName_modal_ok" type="button" class="default">Determine</button>
+                                        <button type="button" class="border closeBtn" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--Modal End-->
+
+                        <table id="table_project_selection" class="control_table" style="margin-left: 10px; margin-top: 20px;">
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="template" style="display: none;">
+                <tr>
+                    <td>Project 1</td>
+                    <td>
+                        <input class="form-control text_project_name" style="width: 100%; " type="text" placeholder="Enter the name of charge item">
+                    </td>
+                    <td>
+                        <div class="item">
+                            <button class="border btn_item_up"><i class="fa fa-arrow-up"></i></button>
+                            <button class="border btn_item_down"><i class="fa fa-arrow-down"></i></button>
+                            <button class="border btn_item_remove"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                <button class="default">Preview</button>
+                <button class="default">Release</button>
+                <button class="border" id="btn_consolidate_return" >Return</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

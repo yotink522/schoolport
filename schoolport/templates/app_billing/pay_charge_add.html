@@ -1,0 +1,228 @@
+{% load i18n %}
+{% load static %}
+
+<div class="pay-main-content">      
+    <!--Scan Code to Charge start-->
+    <div class="content">
+        <div class='title'>
+            Add a merged QR code
+        </div>
+        <div class = "table">
+            <table class="layout_table autowidth">
+                <tr>
+                    <td><span class='require_symbol'>*</span>Project name</td>
+                    <td>
+                        <div class="item">
+                            <input class="form-control" style="width: 218px;" type="text" placeholder="Please enter the project name">
+                            <button class="default" style="margin-left: 20px;" data-toggle="modal" data-target="#modal_projectName_add">+ Add a Chargeable QR Code</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal_projectName_add">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Choose a charge item</h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="item">
+                                                <input class="form-control" style="width: 418px;" type="text" placeholder="Please enter a keyword query">
+                                                <button class="default" style="margin-left: 20px;">Inquire</button>
+                                            </div>
+                                        
+                                            <table class="normal_table" style="width: 100%; margin-top: 20px;">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th style="width: 30px;"></th>
+                                                        <th>Project Name</th>
+                                                        <th>Start date</th>
+                                                        <th>Deadline</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 30px; padding: 0px; text-align: center; vertical-align: middle;">      
+                                                            <input class="normal_check" type="checkbox">
+                                                        </td>
+                                                        <td>Dianshi International Education Center</td>
+                                                        <td>2019-08-01 11:00:00</td>
+                                                        <td>2021-12-31 23:59:59	</td>
+                                                        <td>In effect</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="projectName_modal_ok" type="button" class="default">Determine</button>
+                                            <button type="button" class="border closeBtn" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--Modal End-->
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class='require_symbol'>*</span>Amount option settings</td>
+                    <td>
+                        <table id="table_amout_option" class="control_table" style="margin-left: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>Charge item name</th>
+                                    <th>CHarging method</th>
+                                    <th>Charge amount</th>
+                                    <th>Do you have to pay</th>
+                                    <th>Quantitative restrictions</th>
+                                    <th>Operating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input class="form-control text_project_name" style="width: 100%;" type="text" placeholder="Enter the name of charge item">
+                                    </td>
+                                    <td>
+                                        <select class="form-control" style="width: 100%;">
+                                            <option value = "-1">Please choose</option>
+                                            <option value = "1">Must pay</option>
+                                            <option value = "2">Election</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class='input-group'>
+                                            <input type="text" class="form-control" style = 'width: 50px;' placeholder="Please select the amount" aria-describedby="yuan-addon">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" style="height: 36px;" id="yuan-addon">yuan</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" style="width: 100%;">
+                                            <option value = "-1">Please choose</option>
+                                            <option value = "1">Fixed amount</option>
+                                            <option value = "2">Filled in by the user</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" style="width: 100%;" type="text" placeholder="Enter the name of charge item">
+                                    </td>
+                                    <td>
+                                        <div class="item">
+                                            <button class="border btn_item_up"><i class="fa fa-arrow-up"></i></button>
+                                            <button class="border btn_item_down"><i class="fa fa-arrow-down"></i></button>
+                                            <button class="border btn_item_remove"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button id="btn_projectName_amount_add" class="default" style="margin-top: 20px; margin-left: 20px;">Increase fees</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class='require_symbol'>*</span>QR code effective time</td>
+                    <td>
+                        <div class="item">
+                            <input class="form-control" type="date">
+                            <span style="margin-left: 10px; margin-right: 10px;">to</span>
+                            <input class="form-control" type="date">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class='require_symbol'>*</span>Accounts receivable</td>
+                    <td>
+                        <div class="item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check_wechat_receiving">
+                                <label class="form-check-label" for="check_wechat_receiving">WeChat Receiving Account</label>
+                            </div>    
+                            <select class="form-control" style="width: 280px;">
+                                <option value = "-1">Please select the receiving account</option>
+                                <option value = "1">WeChat Receiving Wallet</option>
+                            </select>                                
+                        </div>
+
+                        <div class="item" style="margin-top: 20px;">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check_alipay_receiving">
+                                <label class="form-check-label" for="check_alipay_receiving">Alipay Receiving Account</label>
+                            </div>    
+                            <select class="form-control" style="width: 280px;">
+                                <option value = "-1">Please select the receiving account</option>
+                                <option value = "1">Yuan Changsong-China Construction Bank</option>
+                            </select>                                
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Information to be registered before payment</td>
+                    <td>
+                        <table id="table_information_before_reg" class="control_table" style="margin-left: 10px;">
+                            <tr>
+                                <th>Entry name</th>
+                                <th>User fills in</th>
+                                <th>Charge amount</th>
+                                <th>Operating</th>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input class="form-control" style="width: 100%;" type="text" placeholder="Enter the entry">
+                                </td>
+                                <td>
+                                    <select class="form-control" style="width: 100%;">
+                                        <option value = "-1">Please choose</option>
+                                        <option value = "1">Input by user</option>
+                                        <option value = "2">Provide options for users to choose</option>
+                                        <option value = "3">Select system class</option>
+                                        <option value = "4">Select system grade and class</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="form-control" style="width: 100%;" type="text" placeholder="Input description">
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <button class="border btn_item_up"><i class="fa fa-arrow-up"></i></button>
+                                        <button class="border btn_item_down"><i class="fa fa-arrow-down"></i></button>
+                                        <button class="border btn_item_remove"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <button id="btn_projectName_register_information_add" class="default" style="margin-top: 20px; margin-left: 20px;">+ Add registration Items</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Project fee description</td>
+                    <td>
+                        <div class = "wysiwyg_editor">
+                            <textarea id="editor_description" style="height: 300px; width: 100%;"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Picture file</td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+                <button class="default">Preview</button>
+                <button class="default">Save Draft</button>
+                <button class="default">Post</button>
+                <button class="border">Return</button>
+            </div>
+        </div>
+    </div><!--Scan Code to Charge end-->
+</div>
